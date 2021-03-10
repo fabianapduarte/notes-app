@@ -1,13 +1,14 @@
 :root {
   --bg-light: #FAFCFC;
   --bg-dark: #190F26;
-  --text-white: #FFFFFF;
-  --text-black: #0F0F0F;
+  --white: #FFFFFF;
+  --black: #0F0F0F;
   --purple: #9768D1;
   --purple-transparent: rgba(151, 104, 209, 0.1);
   --red: #EB5757;
   --green: #6FCF97;
   --gray: #828282;
+  --gray-light: #BDBDBD;
 }
 
 * {
@@ -21,15 +22,22 @@ body, input, button {
 }
 
 button {
-  cursor: pointer;
   display: flex;
   align-items: center;
+
   margin-left: 1rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   border: none;
   border-radius: 10px;
-  color: var(--text-white);
+
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
   transition: .2s;
+}
+
+button:first-child {
+  margin-left: 0;
 }
 
 button:hover {
@@ -37,7 +45,7 @@ button:hover {
 }
 
 button > span {
-  margin-left: 1rem;
+  display: none;
 }
 
 .btn-purple {
@@ -58,12 +66,12 @@ button > span {
 
 body.bg-light {
   background-color: var(--bg-light);
-  color: var(--text-black);
+  color: var(--black);
 }
 
 body.bg-dark {
   background-color: var(--bg-dark);
-  color: var(--text-white);
+  color: var(--white);
 }
 
 @media(max-width: 1080px) {
@@ -75,5 +83,22 @@ body.bg-dark {
 @media(max-width: 720px) {
   html {
     font-size: 87.5%;
+  }
+}
+
+@media(min-width: 720px) {
+  button {
+    padding: 1rem 1.5rem;
+  }
+
+  button > span {
+    display: inline-block;
+    margin-left: 20px;
+  }
+}
+
+@media(min-width: 370px) {
+  button:first-child {
+    margin-left: 1rem;
   }
 }
