@@ -2,6 +2,8 @@ import { FiPlus, FiMoon } from 'react-icons/fi';
 import { Note } from '../../components/Note';
 import './styles.css';
 
+import addNote from '../../assets/add-note.svg';
+
 function Home() {
   return (
     <div className="bg-light container">
@@ -24,12 +26,17 @@ function Home() {
         </div>
       </header>
 
-      <div className="cards-notes">
-        <Note />
-        <Note />
-        <Note />
-        <Note />
+      <div className="no-notes">
+        <div className="text-no-notes">Você não possui notas.</div>
+        <img src={addNote} alt="Adicionar nota"/>
       </div>
+
+      {/*<div className="cards-notes">
+        <Note />
+        <Note />
+        <Note />
+        <Note />
+      </div>*/}
     </div>
   );
 }
