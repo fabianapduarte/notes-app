@@ -1,4 +1,5 @@
 import { FiPlus, FiMoon } from 'react-icons/fi';
+import { Note } from '../../components/Note';
 import './styles.css';
 
 function Home() {
@@ -22,6 +23,13 @@ function Home() {
           </button>
         </div>
       </header>
+
+      <div className="cards-notes">
+        <Note />
+        <Note />
+        <Note />
+        <Note />
+      </div>
     </div>
   );
 }

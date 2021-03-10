@@ -7,7 +7,15 @@
 
 header {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  margin-bottom: 3rem;
+}
+
+.logo-title h1 {
+  font-size: 2rem;
 }
 
 .logo-title .marker {
@@ -20,7 +28,25 @@ header {
 }
 
 header .header-buttons {
+  margin-top: 1rem;
   display: flex;
-  align-self: flex-end;
 }
 
+.cards-notes {
+  display: flex;
+  flex-direction: column;
+}
+
+@media(min-width: 720px) {
+  .cards-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media(min-width: 370px) {
+  header .header-buttons {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,60 @@
+.card-note {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+}
+
+.card-note.card-light {
+  border: 1px solid var(--purple);
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.card-note.card-light h2 {
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.card-note.card-light small {
+  color: var(--gray-light);
+}
+
+.card-note.card-dark {
+  border: 1px solid var(--purple);
+  background-color: var(--purple-transparent);
+  color: var(--white);
+}
+
+.card-note.card-dark h2 {
+  border-bottom: 1px solid var(--purple);
+}
+
+.card-note.card-dark small {
+  color: var(--purple);
+}
+
+.card-note h2 {
+  padding-bottom: 5px;
+  margin-bottom: 0.75rem;
+
+  font-size: 1.5rem;
+}
+
+.card-note small {
+  display: flex;
+  align-items: center;
+
+  font-style: italic;
+  font-size: 0.75rem;
+
+  margin-bottom: 1rem;
+}
+
+.card-note small > span {
+  margin-left: 0.5rem;
+}
+
+.card-note .card-text {
+  font-size: 1rem;
+}
