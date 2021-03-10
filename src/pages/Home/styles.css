@@ -1,18 +1,3 @@
-.container {
-  max-width: 992px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-}
-
-header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  margin-bottom: 3rem;
-}
-
 .logo-title h1 {
   font-size: 2rem;
 }
@@ -24,11 +9,6 @@ header {
   transform: translate(-5px, -100%);
   z-index: -1;
   background-color: var(--purple);
-}
-
-header .header-buttons {
-  margin-top: 1rem;
-  display: flex;
 }
 
 .cards-notes {
@@ -72,11 +52,5 @@ header .header-buttons {
 
   .no-notes img {
     width: 25rem;
-  }
-}
-
-@media(min-width: 370px) {
-  header .header-buttons {
-    margin-top: 0;
   }
 }
