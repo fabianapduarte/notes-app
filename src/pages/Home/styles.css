@@ -1,0 +1,26 @@
+.container {
+  height: 100vh;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-title .marker {
+  position: relative;
+  height: 39%;
+  width: calc(100% + 10px);
+  transform: translate(-5px, -100%);
+  z-index: -1;
+  background-color: var(--purple);
+}
+
+header .header-buttons {
+  display: flex;
+  align-self: flex-end;
+}
+
