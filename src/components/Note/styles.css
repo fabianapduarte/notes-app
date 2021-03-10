@@ -47,8 +47,6 @@
 
   font-style: italic;
   font-size: 0.75rem;
-
-  margin-bottom: 1rem;
 }
 
 .card-note small > span {
@@ -57,4 +55,12 @@
 
 .card-note .card-text {
   font-size: 1rem;
+
+  margin-top: 1rem;
+}
+
+@media(max-width: 720px) {
+  .card-note:not(.card-note:last-child) {
+    margin-bottom: 1.5rem;
+  }
 }
