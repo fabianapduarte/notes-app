@@ -21,6 +21,15 @@ body, input, button {
   font-family: 'Lato', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  transition: .2s;
+}
+
+a:hover {
+  filter: brightness(0.9);
+}
+
 button {
   display: flex;
   align-items: center;

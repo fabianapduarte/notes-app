@@ -1,15 +1,23 @@
 import { FiClock } from 'react-icons/fi';
 import './styles.css';
 
-export function Note() {
+interface NoteProps {
+  title: string,
+  text: string
+}
+
+const Note: React.FC<NoteProps> = (props) => {
   return (
     <div className="card-note card-light">
-      <h2>Lorem ipsum</h2>
+      <h2>{props.title}</h2>
       {/* <small>
         <FiClock size={12} />
         <span>07/03/2021 às 14:46</span>
       </small> */}
-      <div className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea...</div>
+      <div className="card-text">{props.text}</div>
+      {props.children}
     </div>
   );
 }
+
+export default Note;
