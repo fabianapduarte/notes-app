@@ -1,0 +1,19 @@
+header {
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.card-text {
+  margin-top: 1rem;
+}
+
+.card-note {
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+}
