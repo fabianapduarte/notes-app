@@ -1,0 +1,38 @@
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin-bottom: 3rem;
+}
+
+header.align-items-header {
+  align-items: center;
+}
+
+header .header-buttons {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.header-buttons button > span {
+  display: none;
+}
+
+@media(min-width: 720px) {
+  .header-buttons button > span {
+    display: inline-block;
+    margin-left: 20px;
+  }
+}
+
+@media(min-width: 370px) {
+  .header-buttons button:first-child {
+    margin-left: 1rem;
+  }
+
+  header .header-buttons {
+    margin-top: 0;
+  }
+}

@@ -1,12 +1,14 @@
 import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
-import FormNote from '../../components/FormNote';
-import './styles.css';
+import { Link } from 'react-router-dom';
+import FormNote from '../components/FormNote';
 
 function AddNote() {
   return (
-    <div className="container">
-      <header>
-        <FiArrowLeft size={24} color="#9768D1" />
+    <div className="container note-fullscreen">
+      <header className="align-items-header">
+        <Link to="/">
+          <FiArrowLeft size={24} color="#9768D1" />
+        </Link>
 
         <div className="header-buttons">
           <button className="btn-gray">

@@ -1,14 +1,15 @@
 import { FiClock } from 'react-icons/fi';
-import './styles.css';
+import '../styles/components/note.css';
 
 interface NoteProps {
   title: string,
-  text: string
+  text: string,
+  className?: string
 }
 
 const Note: React.FC<NoteProps> = (props) => {
   return (
-    <div className="card-note card-light">
+    <div className={`card-note card-light ${props.className}`}>
       <h2>{props.title}</h2>
       {/* <small>
         <FiClock size={12} />

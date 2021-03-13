@@ -1,0 +1,9 @@
+.card-text {
+  margin-top: 1rem;
+}
+
+.card-see-note {
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+}

@@ -34,6 +34,7 @@
 
 body, input, button, textarea {
   font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
 
 a {
@@ -68,10 +69,6 @@ button:hover {
   filter: brightness(0.9);
 }
 
-button > span {
-  display: none;
-}
-
 .btn-purple {
   background-color: var(--purple);
 }
@@ -104,18 +101,10 @@ body.bg-dark {
   padding: 3rem 2rem;
 }
 
-header {
+.container.note-fullscreen {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  margin-bottom: 3rem;
-}
-
-header .header-buttons {
-  margin-top: 1rem;
-  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 @media(max-width: 1080px) {
@@ -133,20 +122,5 @@ header .header-buttons {
 @media(min-width: 720px) {
   button {
     padding: 1rem 1.5rem;
-  }
-
-  button > span {
-    display: inline-block;
-    margin-left: 20px;
-  }
-}
-
-@media(min-width: 370px) {
-  button:first-child {
-    margin-left: 1rem;
-  }
-
-  header .header-buttons {
-    margin-top: 0;
   }
 }

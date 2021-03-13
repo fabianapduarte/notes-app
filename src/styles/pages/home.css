@@ -53,4 +53,8 @@
   .no-notes img {
     width: 25rem;
   }
+
+  .card-note-home {
+    min-height: 16.75rem;
+  }
 }
