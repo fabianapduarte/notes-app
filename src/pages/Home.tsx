@@ -1,14 +1,21 @@
-import { FiPlus, FiMoon } from 'react-icons/fi';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiPlus, FiMoon } from 'react-icons/fi';
+
 import Note from '../components/Note';
 
 import '../styles/pages/home.css';
-import data from '../data.json';
 import addNote from '../assets/add-note.svg';
 
-const dataNotes = data;
+interface DataNotesProps {
+  id: number,
+  title: string,
+  text: string
+}
 
 const Home = () => {
+  const [dataNotes, setDataNotes] = useState<Array<DataNotesProps>>(JSON.parse(localStorage.getItem("notes")!));
+
   function limitTextLength(text: string) {
     if(text.length > 250) {
       return `${text.substring(0, 250)}...`;
@@ -32,7 +39,6 @@ const Home = () => {
             </button>
           </Link>
           
-
           <button className="btn-purple">
             <FiMoon size={16} />
             <span>Modo noturno</span>
@@ -40,14 +46,14 @@ const Home = () => {
         </div>
       </header>
 
-      {dataNotes.notes.length === 0 ? (
+      {dataNotes.length === 0 ? (
         <div className="no-notes">
           <div className="text-no-notes">Você não possui notas.</div>
           <img src={addNote} alt="Adicionar nota"/>
         </div>
       ) : (
         <div className="cards-notes">
-          {dataNotes.notes.map(note => {
+          {dataNotes.map(note => {
             return (
               <Note
                 key={note.id}
