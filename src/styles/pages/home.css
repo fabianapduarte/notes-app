@@ -55,6 +55,6 @@
   }
 
   .card-note-home {
-    min-height: 16.75rem;
+    max-height: 16.75rem;
   }
 }

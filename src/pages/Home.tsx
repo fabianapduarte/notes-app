@@ -16,9 +16,35 @@ interface DataNotesProps {
 const Home = () => {
   const [dataNotes, setDataNotes] = useState<Array<DataNotesProps>>(JSON.parse(localStorage.getItem("notes")!));
 
+  function formatTextCard(text: string) {
+    let newString = limitTextLength(text);
+    
+    return limitTextLines(newString);
+  }
+
+  function limitTextLines(text: string) {
+    let textLines = text.split("\n");
+
+    if (textLines.length > 5) {
+      let newText = "";
+
+      for (let i = 0; i < 5; i++) {
+        newText += textLines[i];
+        
+        if (i !== 4) {
+          newText += "\n";
+        }
+      }
+
+      return `${newText}...`;
+    }
+
+    return text;
+  }
+
   function limitTextLength(text: string) {
     if(text.length > 250) {
-      return `${text.substring(0, 250)}...`;
+      return `${text.substr(0, 250)}...`;
     }
     return text;
   }
@@ -58,7 +84,7 @@ const Home = () => {
               <Note
                 key={note.id}
                 title={note.title === "" ? "Sem título" : note.title}
-                text={limitTextLength(note.text)}
+                text={formatTextCard(note.text)}
                 className="card-note-home"
               >
                 <Link to={`note/${note.id}`}>Ver nota</Link>

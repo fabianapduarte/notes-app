@@ -1,8 +1,29 @@
 import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-import FormNote from '../components/FormNote';
+import { Link, useHistory } from 'react-router-dom';
 
 function AddNote() {
+  const history = useHistory();
+
+  const dataNotes = JSON.parse(localStorage.getItem("notes")!);
+
+  function saveNote() {
+    const title = (document.getElementById("title") as HTMLInputElement)?.value;
+    const text = (document.getElementById("text") as HTMLInputElement)?.value;
+
+    const newData = [
+      ...dataNotes,
+      {
+        id: 1,
+        title: title,
+        text: text
+      }
+    ]
+
+    localStorage.setItem("notes", JSON.stringify(newData));
+
+    history.push('/');
+  }
+
   return (
     <div className="container note-fullscreen">
       <header className="align-items-header">
@@ -11,19 +32,36 @@ function AddNote() {
         </Link>
 
         <div className="header-buttons">
-          <button className="btn-gray">
-            <FiX size={16} />
-            <span>Cancelar</span>
-          </button>
+          <Link to="/">
+            <button className="btn-gray">
+              <FiX size={16} />
+              <span>Cancelar</span>
+            </button>
+          </Link>
 
-          <button className="btn-green">
+          <button onClick={saveNote} className="btn-green">
             <FiCheck size={16} />
             <span>Salvar nota</span>
           </button>
         </div>
       </header>
 
-      <FormNote />
+      <form className="card-note card-light">
+        <input
+          name="title"
+          id="title" 
+          className="input-card-note" 
+          type="text" 
+          placeholder="Título" 
+          maxLength={100}
+        />
+        <textarea 
+          name="text" 
+          id="text" 
+          className="input-card-note" 
+          placeholder="Texto"
+        ></textarea>
+      </form>
     </div>
   );
 }
