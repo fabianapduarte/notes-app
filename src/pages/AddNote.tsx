@@ -1,10 +1,39 @@
 import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
+interface DataNotesProps {
+  id: string,
+  title: string,
+  text: string
+}
+
 function AddNote() {
   const history = useHistory();
 
   const dataNotes = JSON.parse(localStorage.getItem("notes")!);
+
+  function generateNewId() {
+    let newId = generateRandomId();
+
+    dataNotes.forEach((note : DataNotesProps) => {
+      if (note.id === newId) {
+        newId = generateRandomId();
+      }
+    });
+
+    return newId;
+  }
+
+  function generateRandomId() {
+    let caracters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    let id = '';
+
+    for (let i = 0; i < 8; i++) {
+      id += caracters.charAt(Math.floor(Math.random() * caracters.length));
+    }
+
+    return id;
+  }
 
   function saveNote() {
     const title = (document.getElementById("title") as HTMLInputElement)?.value;
@@ -13,11 +42,11 @@ function AddNote() {
     const newData = [
       ...dataNotes,
       {
-        id: 1,
+        id: generateNewId(),
         title: title,
         text: text
       }
-    ]
+    ];
 
     localStorage.setItem("notes", JSON.stringify(newData));
 

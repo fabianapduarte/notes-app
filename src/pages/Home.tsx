@@ -8,7 +8,7 @@ import '../styles/pages/home.css';
 import addNote from '../assets/add-note.svg';
 
 interface DataNotesProps {
-  id: number,
+  id: string,
   title: string,
   text: string
 }
