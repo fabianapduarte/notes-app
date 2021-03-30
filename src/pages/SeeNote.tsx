@@ -69,17 +69,17 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
         ?
         (
           note
-            ?
-            (
-              <Note
-                key={note.id}
-                title={note.title}
-                text={note.text}
-                className="card-see-note"
-              />
-            )
-            :
-            (alert("Nota não encontrada."))
+          ?
+          (
+            <Note
+              key={note.id}
+              title={(note.title === '' ? "Sem título" : note.title)}
+              text={note.text}
+              className="card-see-note"
+            />
+          )
+          :
+          (alert("Nota não encontrada."))
         )
         :
         console.log('loading')
