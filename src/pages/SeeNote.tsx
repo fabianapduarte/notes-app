@@ -39,6 +39,11 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
     setLoading(false);
   }
 
+  function redirectToHome() {
+    alert("A nota não foi encontrada");
+    history.push("/");
+  }
+
   useEffect(() => {
     verifyNote(noteId);
   }, [noteId]);
@@ -79,7 +84,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
             />
           )
           :
-          (alert("Nota não encontrada."))
+          (redirectToHome())
         )
         :
         console.log('loading')
