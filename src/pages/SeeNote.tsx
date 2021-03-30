@@ -19,6 +19,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   const history = useHistory();
 
   const [note, setNote] = useState<DataNotesProps | null>(null);
+  const [loading, setLoading] = useState<Boolean>(true);
 
   const noteId = props.match.params.id;
 
@@ -26,7 +27,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
     const dataNotes = JSON.parse(localStorage.getItem('notes')!);
 
     dataNotes.forEach((note: DataNotesProps) => {
-      if(note.id === noteId) {
+      if (note.id === noteId) {
         setNote({
           id: note.id,
           title: note.title,
@@ -34,6 +35,8 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
         });
       }
     });
+
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -62,16 +65,25 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
         </div>
       </header>
 
-      {note ? (
-        <Note
-          key={note.id}
-          title={note.title}
-          text={note.text}
-          className="card-see-note"
-        />
-      ) : (
-        alert("Nota não encontrada...")
-      )}
+      {loading === false
+        ?
+        (
+          note
+            ?
+            (
+              <Note
+                key={note.id}
+                title={note.title}
+                text={note.text}
+                className="card-see-note"
+              />
+            )
+            :
+            (alert("Nota não encontrada."))
+        )
+        :
+        console.log('loading')
+      }
     </div>
   );
 }
