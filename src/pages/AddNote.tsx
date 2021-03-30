@@ -75,7 +75,7 @@ function AddNote() {
         </div>
       </header>
 
-      <form className="card-note card-light">
+      <form className="card-note form-card-note card-light">
         <input
           name="title"
           id="title" 
