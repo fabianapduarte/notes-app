@@ -2,7 +2,7 @@ import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
 interface DataNotesProps {
-  id: string,
+  id: number,
   title: string,
   text: string
 }
@@ -10,39 +10,18 @@ interface DataNotesProps {
 function AddNote() {
   const history = useHistory();
 
-  const dataNotes = JSON.parse(localStorage.getItem("notes")!);
-
-  function generateNewId() {
-    let newId = generateRandomId();
-
-    dataNotes.forEach((note : DataNotesProps) => {
-      if (note.id === newId) {
-        newId = generateRandomId();
-      }
-    });
-
-    return newId;
-  }
-
-  function generateRandomId() {
-    let caracters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
-    let id = '';
-
-    for (let i = 0; i < 8; i++) {
-      id += caracters.charAt(Math.floor(Math.random() * caracters.length));
-    }
-
-    return id;
-  }
+  const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
   function saveNote() {
     const title = (document.getElementById("title") as HTMLInputElement)?.value;
     const text = (document.getElementById("text") as HTMLInputElement)?.value;
 
-    const newData = [
+    const lastNoteId = dataNotes[dataNotes.length - 1]?.id || 0 
+
+    const newData: DataNotesProps[] = [
       ...dataNotes,
       {
-        id: generateNewId(),
+        id: lastNoteId + 1,
         title: title,
         text: text
       }
