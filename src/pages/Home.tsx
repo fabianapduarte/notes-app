@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiPlus, FiMoon } from 'react-icons/fi';
 
@@ -8,13 +7,13 @@ import '../styles/pages/home.css';
 import addNote from '../assets/add-note.svg';
 
 interface DataNotesProps {
-  id: string,
+  id: number,
   title: string,
   text: string
 }
 
 const Home = () => {
-  const [dataNotes, setDataNotes] = useState<Array<DataNotesProps>>(JSON.parse(localStorage.getItem("notes")!));
+  const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
   function formatTextCard(text: string) {
     let newString = limitTextLength(text);
@@ -23,7 +22,7 @@ const Home = () => {
   }
 
   function limitTextLines(text: string) {
-    let textLines = text.split("\n");
+    const textLines = text.split("\n");
 
     if (textLines.length > 5) {
       let newText = "";
@@ -79,18 +78,16 @@ const Home = () => {
         </div>
       ) : (
         <div className="cards-notes">
-          {dataNotes.map(note => {
-            return (
-              <Note
-                key={note.id}
-                title={note.title === "" ? "Sem título" : note.title}
-                text={formatTextCard(note.text)}
-                className="card-note-home"
-              >
-                <Link to={`note/${note.id}`}>Ver nota</Link>
-              </Note>
-            )
-          })}
+          {dataNotes.map(note => (
+            <Note
+              key={note.id}
+              title={note.title === "" ? "Sem título" : note.title}
+              text={formatTextCard(note.text)}
+              className="card-note-home"
+            >
+              <Link to={`note/${note.id}`}>Ver nota</Link>
+            </Note>
+          ))}
         </div>
       )}
     </div>
