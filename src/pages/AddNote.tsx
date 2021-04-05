@@ -1,6 +1,7 @@
 import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
+import FormNote from '../components/FormNote';
 import { DataNotesProps } from '../utils/NoteInterface';
 
 function AddNote() {
@@ -8,7 +9,7 @@ function AddNote() {
 
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
-  function saveNote() {
+  function addNewNote() {
     const title = (document.getElementById("title") as HTMLInputElement)?.value;
     const text = (document.getElementById("text") as HTMLInputElement)?.value;
 
@@ -43,29 +44,14 @@ function AddNote() {
             </button>
           </Link>
 
-          <button onClick={saveNote} className="btn-green">
+          <button type="submit" form="form-note" onClick={addNewNote} className="btn-green">
             <FiCheck size={16} />
             <span>Salvar nota</span>
           </button>
         </div>
       </header>
 
-      <form className="card-note form-card-note card-light">
-        <input
-          name="title"
-          id="title" 
-          className="input-card-note" 
-          type="text" 
-          placeholder="Título" 
-          maxLength={100}
-        />
-        <textarea 
-          name="text" 
-          id="text" 
-          className="input-card-note" 
-          placeholder="Texto"
-        ></textarea>
-      </form>
+      <FormNote className="form-card-note" />
     </div>
   );
 }

@@ -20,14 +20,15 @@ function EditNote() {
             <span>Cancelar</span>
           </button>
 
-          <button className="btn-green">
+          <button type="submit" form="form-note" className="btn-green">
             <FiCheck size={16} />
             <span>Salvar nota</span>
           </button>
         </div>
       </header>
 
-      <FormNote 
+      <FormNote
+        className="form-card-note"
         title={dataNotes.notes[0].title}
         text={dataNotes.notes[0].text}
       />
