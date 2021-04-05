@@ -1,11 +1,7 @@
 import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
-interface DataNotesProps {
-  id: number,
-  title: string,
-  text: string
-}
+import { DataNotesProps } from '../utils/NoteInterface';
 
 function AddNote() {
   const history = useHistory();

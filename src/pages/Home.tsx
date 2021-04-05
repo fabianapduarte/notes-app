@@ -2,15 +2,10 @@ import { Link } from 'react-router-dom';
 import { FiPlus, FiMoon } from 'react-icons/fi';
 
 import Note from '../components/Note';
+import { DataNotesProps } from '../utils/NoteInterface';
 
 import '../styles/pages/home.css';
 import addNote from '../assets/add-note.svg';
-
-interface DataNotesProps {
-  id: number,
-  title: string,
-  text: string
-}
 
 const Home = () => {
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);

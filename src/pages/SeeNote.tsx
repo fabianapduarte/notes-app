@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react';
 import { FiArrowLeft, FiEdit, FiTrash2 } from 'react-icons/fi';
 import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
+
 import Note from '../components/Note';
+import { DataNotesProps } from '../utils/NoteInterface';
 
 import '../styles/pages/see-note.css';
-
-interface DataNotesProps {
-  id: string;
-  title: string;
-  text: string;
-}
 
 interface ParamsProps {
   id: string
@@ -21,13 +17,13 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   const [note, setNote] = useState<DataNotesProps | null>(null);
   const [loading, setLoading] = useState<Boolean>(true);
 
-  const noteId = props.match.params.id;
+  const noteIdUrl = props.match.params.id;
 
-  function verifyNote(noteId: string) {
-    const dataNotes = JSON.parse(localStorage.getItem('notes')!);
+  function verifyNote(noteIdUrl: string) {
+    const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem('notes')!);
 
     dataNotes.forEach((note: DataNotesProps) => {
-      if (note.id === noteId) {
+      if (note.id === Number(noteIdUrl)) {
         setNote({
           id: note.id,
           title: note.title,
@@ -45,8 +41,8 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   }
 
   useEffect(() => {
-    verifyNote(noteId);
-  }, [noteId]);
+    verifyNote(noteIdUrl);
+  }, [noteIdUrl]);
 
   return (
     <div className="container note-fullscreen">
