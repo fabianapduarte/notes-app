@@ -19,9 +19,9 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
 
   const noteIdUrl = props.match.params.id;
 
-  function loadingNote(noteIdUrl: string) {
-    const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem('notes')!);
+  const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem('notes')!);
 
+  function loadingNote(noteIdUrl: string) {
     dataNotes.forEach(note => {
       if (note.id === Number(noteIdUrl)) {
         setNote({
@@ -37,6 +37,14 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
 
   function redirectToHome() {
     alert("A nota não foi encontrada");
+    history.push("/");
+  }
+
+  function deleteNote(noteId: string) {
+    const newDataNotes = dataNotes.filter(note => note.id !== Number(noteId));
+
+    localStorage.setItem("notes", JSON.stringify(newDataNotes));
+
     history.push("/");
   }
 
@@ -59,7 +67,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
             </button>
           </Link>
 
-          <button className="btn-red">
+          <button onClick={() => deleteNote(noteIdUrl)} className="btn-red">
             <FiTrash2 size={16} />
             <span>Excluir nota</span>
           </button>
