@@ -44,7 +44,7 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-light container">
+    <div className="container">
       <header>
         <div className="logo-title">
           <h1>Suas anotações</h1>
