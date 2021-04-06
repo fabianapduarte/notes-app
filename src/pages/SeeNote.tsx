@@ -19,10 +19,10 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
 
   const noteIdUrl = props.match.params.id;
 
-  function verifyNote(noteIdUrl: string) {
+  function loadingNote(noteIdUrl: string) {
     const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem('notes')!);
 
-    dataNotes.forEach((note: DataNotesProps) => {
+    dataNotes.forEach(note => {
       if (note.id === Number(noteIdUrl)) {
         setNote({
           id: note.id,
@@ -41,7 +41,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   }
 
   useEffect(() => {
-    verifyNote(noteIdUrl);
+    loadingNote(noteIdUrl);
   }, [noteIdUrl]);
 
   return (
@@ -52,7 +52,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
         </Link>
 
         <div className="header-buttons">
-          <Link to="/edit/1">
+          <Link to={`/edit/${noteIdUrl}`}>
             <button className="btn-purple">
               <FiEdit size={16} />
               <span>Editar nota</span>
