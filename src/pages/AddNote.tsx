@@ -27,6 +27,9 @@ function AddNote() {
 
       localStorage.setItem("notes", JSON.stringify(newData));
     }
+    else {
+      alert("Não há nada para salvar. Nota descartada.");
+    }
 
     history.push('/');
   }
