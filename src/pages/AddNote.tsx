@@ -15,7 +15,7 @@ function AddNote() {
 
     const lastNoteId = dataNotes[dataNotes.length - 1]?.id || 0;
 
-    if (title !== "" && text !== "") {
+    if (title !== "" || text !== "") {
       const newData: DataNotesProps[] = [
         ...dataNotes,
         {
