@@ -43,19 +43,24 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
   }
 
   function updateNote(idNote: string) {
-    const updatedTitle = (document.getElementById("title") as HTMLInputElement)?.value || (document.getElementById("title") as HTMLInputElement)?.defaultValue;
-    const updatedText = (document.getElementById("text") as HTMLInputElement)?.value || (document.getElementById("text") as HTMLInputElement)?.defaultValue; 
+    const updatedTitle = (document.getElementById("title") as HTMLInputElement)?.value;
+    const updatedText = (document.getElementById("text") as HTMLInputElement)?.value;
 
-    dataNotes.forEach(note => {
-      if (note.id === Number(idNote)) {
-        note.title = updatedTitle;
-        note.text = updatedText;
-      }
-    });
+    if (updatedTitle !== "" || updatedText !== "") {
+      dataNotes.forEach(note => {
+        if (note.id === Number(idNote)) {
+          note.title = updatedTitle;
+          note.text = updatedText;
+        }
+      });
 
-    localStorage.setItem("notes", JSON.stringify(dataNotes));
+      localStorage.setItem("notes", JSON.stringify(dataNotes));
 
-    history.push("/");
+      history.push("/");
+    }
+    else {
+      alert("Preencha pelo menos um dos campos.")
+    }
   }
 
   return (
