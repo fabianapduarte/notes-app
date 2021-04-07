@@ -13,18 +13,20 @@ function AddNote() {
     const title = (document.getElementById("title") as HTMLInputElement)?.value;
     const text = (document.getElementById("text") as HTMLInputElement)?.value;
 
-    const lastNoteId = dataNotes[dataNotes.length - 1]?.id || 0 
+    const lastNoteId = dataNotes[dataNotes.length - 1]?.id || 0;
 
-    const newData: DataNotesProps[] = [
-      ...dataNotes,
-      {
-        id: lastNoteId + 1,
-        title: title,
-        text: text
-      }
-    ];
+    if (title !== "" && text !== "") {
+      const newData: DataNotesProps[] = [
+        ...dataNotes,
+        {
+          id: lastNoteId + 1,
+          title: title,
+          text: text
+        }
+      ];
 
-    localStorage.setItem("notes", JSON.stringify(newData));
+      localStorage.setItem("notes", JSON.stringify(newData));
+    }
 
     history.push('/');
   }
