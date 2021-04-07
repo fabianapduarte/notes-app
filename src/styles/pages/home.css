@@ -16,6 +16,15 @@
   flex-direction: column;
 }
 
+.card-note-home {
+  height: 12.75rem;
+  transition: 0.2s;
+}
+
+.card-note-home:hover {
+  box-shadow: 0px 8px 13px 0px rgba(0, 0, 0, 0.2);
+}
+
 .no-notes {
   display: flex;
   flex-direction: column;
@@ -42,7 +51,7 @@
   .cards-notes {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .no-notes .text-no-notes {
@@ -52,9 +61,5 @@
 
   .no-notes img {
     width: 25rem;
-  }
-
-  .card-note-home {
-    max-height: 16.75rem;
   }
 }

@@ -5,7 +5,7 @@
 .input-card-note {
   padding: 0.5rem;
 
-  border: 1px solid #E0E0E0;
+  border: none;
   color: var(--black);
 }
 
