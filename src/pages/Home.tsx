@@ -19,13 +19,13 @@ const Home = () => {
   function limitTextLines(text: string) {
     const textLines = text.split("\n");
 
-    if (textLines.length > 5) {
+    if (textLines.length > 4) {
       let newText = "";
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 4; i++) {
         newText += textLines[i];
         
-        if (i !== 4) {
+        if (i !== 3) {
           newText += "\n";
         }
       }
@@ -37,8 +37,8 @@ const Home = () => {
   }
 
   function limitTextLength(text: string) {
-    if(text.length > 250) {
-      return `${text.substr(0, 250)}...`;
+    if(text.length > 200) {
+      return `${text.substr(0, 200)}...`;
     }
     return text;
   }
@@ -74,14 +74,14 @@ const Home = () => {
       ) : (
         <div className="cards-notes">
           {dataNotes.map(note => (
-            <Note
-              key={note.id}
-              title={note.title === "" ? "Sem título" : note.title}
-              text={formatTextCard(note.text)}
-              className="card-note-home"
-            >
-              <Link to={`note/${note.id}`}>Ver nota</Link>
-            </Note>
+            <Link to={`note/${note.id}`} key={note.id} className="card-note-link">
+              <Note
+                key={note.id}
+                title={note.title}
+                text={formatTextCard(note.text)}
+                className="card-note-home"
+              />
+            </Link>
           ))}
         </div>
       )}
