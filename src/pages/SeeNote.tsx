@@ -55,19 +55,19 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   return (
     <div className="container note-fullscreen">
       <header className="align-items-header">
-        <Link to="/">
+        <Link to="/" className="animate-up">
           <FiArrowLeft size={24} color="#9768D1" />
         </Link>
 
         <div className="header-buttons">
           <Link to={`/edit/${noteIdUrl}`}>
-            <button className="btn-purple">
+            <button className="btn-purple animate-up">
               <FiEdit size={16} />
               <span>Editar nota</span>
             </button>
           </Link>
 
-          <button onClick={() => deleteNote(noteIdUrl)} className="btn-red">
+          <button onClick={() => deleteNote(noteIdUrl)} className="btn-red animate-up">
             <FiTrash2 size={16} />
             <span>Excluir nota</span>
           </button>
@@ -82,9 +82,9 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
           (
             <Note
               key={note.id}
-              title={(note.title === '' ? "Sem título" : note.title)}
+              title={note.title}
               text={note.text}
-              className="card-see-note"
+              className="card-see-note animate-up delay-1"
             />
           )
           :

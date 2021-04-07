@@ -47,19 +47,19 @@ const Home = () => {
     <div className="container">
       <header>
         <div className="logo-title">
-          <h1>Suas anotações</h1>
-          <div className="marker"></div>
+          <h1 className="animate-up">Suas anotações</h1>
+          <div className="marker animate-marker delay-1"></div>
         </div>
 
         <div className="header-buttons">
           <Link to="/add">
-            <button className="btn-purple">
+            <button className="btn-purple animate-up">
               <FiPlus size={16} />
               <span>Adicionar nota</span>
             </button>
           </Link>
           
-          <button className="btn-purple">
+          <button className="btn-purple animate-up">
             <FiMoon size={16} />
             <span>Modo noturno</span>
           </button>
@@ -68,13 +68,13 @@ const Home = () => {
 
       {dataNotes.length === 0 ? (
         <div className="no-notes">
-          <div className="text-no-notes">Você não possui notas.</div>
-          <img src={addNote} alt="Adicionar nota"/>
+          <div className="text-no-notes animate-up">Você não possui notas.</div>
+          <img src={addNote} alt="Adicionar nota" className="animate-up delay-1" />
         </div>
       ) : (
         <div className="cards-notes">
           {dataNotes.map(note => (
-            <Link to={`note/${note.id}`} key={note.id} className="card-note-link">
+            <Link to={`note/${note.id}`} key={note.id} className="card-note-link animate-up delay-1">
               <Note
                 key={note.id}
                 title={note.title}

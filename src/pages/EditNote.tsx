@@ -66,19 +66,19 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
   return (
     <div className="container note-fullscreen">
       <header className="align-items-header">
-        <Link to="/">
+        <Link to="/" className="animate-up">
           <FiArrowLeft size={24} color="#9768D1" />
         </Link>
 
         <div className="header-buttons">
           <Link to="/">
-            <button className="btn-gray">
+            <button className="btn-gray animate-up">
               <FiX size={16} />
               <span>Cancelar</span>
             </button>
           </Link>
 
-          <button className="btn-green" onClick={() => updateNote(noteIdUrl)}>
+          <button className="btn-green animate-up" onClick={() => updateNote(noteIdUrl)}>
             <FiCheck size={16} />
             <span>Salvar nota</span>
           </button>
@@ -93,7 +93,7 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
           (
             <FormNote
               key={note.id}
-              className="form-card-note"
+              className="form-card-note animate-up delay-1"
               title={note.title}
               text={note.text}
             />

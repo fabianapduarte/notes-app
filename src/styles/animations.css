@@ -1,0 +1,42 @@
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-up {
+  opacity: 0;
+
+  animation: up 500ms forwards;
+}
+
+.delay-1 {
+  animation-delay: 250ms;
+}
+
+.animate-marker {
+  opacity: 0;
+
+  animation-name: marker;
+  animation-duration: 1s;
+  animation-delay: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes marker {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: calc(100% + 10px);
+  }
+}

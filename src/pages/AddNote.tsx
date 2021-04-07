@@ -37,26 +37,26 @@ function AddNote() {
   return (
     <div className="container note-fullscreen">
       <header className="align-items-header">
-        <Link to="/">
+        <Link to="/" className="animate-up">
           <FiArrowLeft size={24} color="#9768D1" />
         </Link>
 
         <div className="header-buttons">
           <Link to="/">
-            <button className="btn-gray">
+            <button className="btn-gray animate-up">
               <FiX size={16} />
               <span>Cancelar</span>
             </button>
           </Link>
 
-          <button type="submit" form="form-note" onClick={addNewNote} className="btn-green">
+          <button type="submit" form="form-note" onClick={addNewNote} className="btn-green animate-up">
             <FiCheck size={16} />
             <span>Salvar nota</span>
           </button>
         </div>
       </header>
 
-      <FormNote className="form-card-note" />
+      <FormNote className="form-card-note animate-up delay-1" />
     </div>
   );
 }

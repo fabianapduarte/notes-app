@@ -3,6 +3,7 @@ import Routes from './routes';
 import initializeLocalStorage from './utils/data';
 
 import './styles/global.css';
+import './styles/animations.css';
 import './styles/header.css';
 
 function App() {
