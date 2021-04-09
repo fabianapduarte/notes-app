@@ -46,6 +46,6 @@
 
 @media(min-width: 720px) {
   .modal-content {
-    width: 40vw;
+    width: 400px;
   }
 }
