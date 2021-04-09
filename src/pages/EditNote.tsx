@@ -3,6 +3,7 @@ import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 
 import FormNote from '../components/FormNote';
+import Modal from '../components/Modal';
 import { DataNotesProps } from '../utils/NoteInterface';
 
 interface ParamsProps {
@@ -36,11 +37,6 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
   useEffect(() => {
     loadingNote(noteIdUrl);
   }, [noteIdUrl]);
-
-  function redirectToHome() {
-    alert("A nota não foi encontrada");
-    history.push("/");
-  }
 
   function updateNote(idNote: string) {
     const updatedTitle = (document.getElementById("title") as HTMLInputElement)?.value;
@@ -99,7 +95,11 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
             />
           )
           :
-          (redirectToHome())
+          (
+            <Modal
+              text="Nota não encontrada"
+           />
+          )
         )
         :
         console.log('loading')

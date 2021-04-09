@@ -3,6 +3,7 @@ import { FiArrowLeft, FiEdit, FiTrash2 } from 'react-icons/fi';
 import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 
 import Note from '../components/Note';
+import Modal from '../components/Modal';
 import { DataNotesProps } from '../utils/NoteInterface';
 
 import '../styles/pages/see-note.css';
@@ -33,11 +34,6 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
     });
 
     setLoading(false);
-  }
-
-  function redirectToHome() {
-    alert("A nota não foi encontrada");
-    history.push("/");
   }
 
   function deleteNote(noteId: string) {
@@ -88,7 +84,11 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
             />
           )
           :
-          (redirectToHome())
+          (
+            <Modal
+              text="Nota não encontrada"
+           />
+          )
         )
         :
         console.log('loading')
