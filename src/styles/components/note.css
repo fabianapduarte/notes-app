@@ -16,7 +16,7 @@
 }
 
 .card-note.card-dark {
-  background-color: var(--purple-transparent);
+  background-color: var(--purple-dark);
   color: var(--white);
 }
 
@@ -26,7 +26,6 @@
 
 .card-note h2 {
   margin-bottom: 0.5rem;
-
   font-size: 1.5rem;
 }
 
@@ -39,7 +38,7 @@
 }
 
 .card-note small > span {
-  margin-left: 0.5rem;
+  margin-left: 0.4rem;
 }
 
 .card-note .card-text {
