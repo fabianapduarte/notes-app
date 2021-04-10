@@ -73,7 +73,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="cards-notes">
-          {dataNotes.map(note => (
+          {dataNotes.reverse().map(note => (
             <Link to={`note/${note.id}`} key={note.id} className="card-note-link animate-up delay-1">
               <Note
                 key={note.id}
