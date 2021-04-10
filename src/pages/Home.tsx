@@ -37,8 +37,8 @@ const Home = () => {
   }
 
   function limitTextLength(text: string) {
-    if(text.length > 200) {
-      return `${text.substr(0, 200)}...`;
+    if(text.length > 180) {
+      return `${text.substr(0, 180)}...`;
     }
     return text;
   }
@@ -79,6 +79,7 @@ const Home = () => {
                 key={note.id}
                 title={note.title}
                 text={formatTextCard(note.text)}
+                created_at={note.created_at}
                 className="card-note-home"
               />
             </Link>

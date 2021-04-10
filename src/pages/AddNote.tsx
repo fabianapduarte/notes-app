@@ -21,7 +21,8 @@ function AddNote() {
         {
           id: lastNoteId + 1,
           title: title,
-          text: text
+          text: text,
+          created_at: Date.now()
         }
       ];
 

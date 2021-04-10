@@ -1,20 +1,38 @@
-//import { FiClock } from 'react-icons/fi';
+import { FiClock } from 'react-icons/fi';
 import '../styles/components/note.css';
 
 interface NoteProps {
   title: string,
   text: string,
+  created_at: number,
   className?: string
+}
+
+function convertMsToDate(dateInMs: number) {
+  const noteCreationDateInMs = new Date(dateInMs);
+
+  // conversão da data
+  const date = {
+    hours: noteCreationDateInMs.getHours(),
+    minutes: noteCreationDateInMs.getMinutes(),
+    day: noteCreationDateInMs.getDate(),
+    month: noteCreationDateInMs.getMonth(),
+    year: noteCreationDateInMs.getFullYear()
+  }
+
+  const dateFormated = `${date.day}/${date.month}/${date.year} às ${date.hours}:${date.minutes}`;
+
+  return dateFormated;
 }
 
 const Note: React.FC<NoteProps> = (props) => {
   return (
     <div className={`card-note card-light ${props.className}`}>
       <h2>{props.title === "" ? <i>Sem título</i> : props.title}</h2>
-      {/* <small>
+      <small>
         <FiClock size={12} />
-        <span>07/03/2021 às 14:46</span>
-      </small> */}
+        <span>{convertMsToDate(props.created_at)}</span>
+      </small>
       <div className="card-text">{props.text === "" ? <i>Sem texto</i> : props.text}</div>
       {props.children}
     </div>

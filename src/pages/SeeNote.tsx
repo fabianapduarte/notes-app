@@ -28,7 +28,8 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
         setNote({
           id: note.id,
           title: note.title,
-          text: note.text
+          text: note.text,
+          created_at: note.created_at
         });
       }
     });
@@ -80,6 +81,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
               key={note.id}
               title={note.title}
               text={note.text}
+              created_at={note.created_at}
               className="card-see-note animate-up delay-1"
             />
           )

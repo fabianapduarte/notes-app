@@ -26,7 +26,8 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
         setNote({
           id: note.id,
           title: note.title,
-          text: note.text
+          text: note.text,
+          created_at: note.created_at
         });
       }
     });
