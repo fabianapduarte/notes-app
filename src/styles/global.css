@@ -1,13 +1,13 @@
 :root {
   --bg-light: #F2F3F5;
-  --bg-dark: #190F26;
+  --bg-dark: #1E1428;
   --white: #FFFFFF;
   --black: #0F0F0F;
-  --purple: #9768D1;
-  --purple-transparent: rgba(151, 104, 209, 0.1);
+  --purple: #9966CC;
+  --purple-dark: #2D1E3D;
   --red: #EB5757;
   --green: #6FCF97;
-  --gray: #828282;
+  --gray: #686868;
   --gray-light: #BDBDBD;
 }
 
@@ -23,7 +23,7 @@
   height: 20px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--gray-light);
+  background-color: var(--gray);
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
@@ -84,12 +84,12 @@ button:hover {
   background-color: var(--red);
 }
 
-body.bg-light {
+.bg-light {
   background-color: var(--bg-light);
   color: var(--black);
 }
 
-body.bg-dark {
+.bg-dark {
   background-color: var(--bg-dark);
   color: var(--white);
 }
