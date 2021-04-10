@@ -6,11 +6,20 @@
   padding: 0.5rem;
 
   border: none;
-  color: var(--black);
 }
 
 .input-card-note:focus {
   outline: none;
+}
+
+.input-card-note-light {
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.input-card-note-dark {
+  color: var(--white);
+  background-color: var(--purple-dark);
 }
 
 input.input-card-note {
