@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FiPlus, FiMoon } from 'react-icons/fi';
+import { FiPlus, FiMoon, FiSun } from 'react-icons/fi';
 
 import Note from '../components/Note';
 import { ThemeContext } from '../contexts/ThemeContext';
@@ -65,8 +65,17 @@ const Home = () => {
           </Link>
           
           <button className="btn-purple animate-up" onClick={switchTheme}>
-            <FiMoon size={16} />
-            <span>Modo noturno</span>
+            { theme === "light" ? (
+              <>
+                <FiMoon size={16} />
+                <span>Modo noturno</span>
+              </>
+            ) : (
+              <>
+                <FiSun size={16} />
+                <span>Modo claro</span>
+              </>
+            )}
           </button>
         </div>
       </header>
