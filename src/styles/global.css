@@ -98,6 +98,10 @@ button:focus {
   color: var(--white);
 }
 
+.bg-light, .bg-dark {
+  transition: 300ms;
+}
+
 .container {
   max-width: 992px;
   margin: 0 auto;

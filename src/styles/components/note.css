@@ -24,6 +24,10 @@
   color: var(--purple);
 }
 
+.card-light, .card-dark {
+  transition: 300ms;
+}
+
 .card-note h2 {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
