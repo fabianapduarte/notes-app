@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FiPlus, FiMoon } from 'react-icons/fi';
 
 import Note from '../components/Note';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { DataNotesProps } from '../utils/NoteInterface';
 
 import '../styles/pages/home.css';
@@ -9,6 +11,9 @@ import addNote from '../assets/add-note.svg';
 
 const Home = () => {
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
+
+  const { theme, switchTheme } = useContext(ThemeContext);
+  document.querySelector("body")?.classList.add(`bg-${theme}`);
 
   function formatTextCard(text: string) {
     let newString = limitTextLength(text);
@@ -59,7 +64,7 @@ const Home = () => {
             </button>
           </Link>
           
-          <button className="btn-purple animate-up">
+          <button className="btn-purple animate-up" onClick={switchTheme}>
             <FiMoon size={16} />
             <span>Modo noturno</span>
           </button>

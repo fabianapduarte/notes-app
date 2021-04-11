@@ -1,13 +1,18 @@
+import { useContext } from 'react';
 import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
 import FormNote from '../components/FormNote';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { DataNotesProps } from '../utils/NoteInterface';
 
 function AddNote() {
   const history = useHistory();
 
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
+
+  const { theme } = useContext(ThemeContext);
+  document.querySelector("body")?.classList.add(`bg-${theme}`);
 
   function addNewNote() {
     const title = (document.getElementById("title") as HTMLInputElement)?.value;

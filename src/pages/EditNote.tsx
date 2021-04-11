@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 
 import FormNote from '../components/FormNote';
 import Modal from '../components/Modal';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { DataNotesProps } from '../utils/NoteInterface';
 
 interface ParamsProps {
@@ -12,6 +13,9 @@ interface ParamsProps {
 
 function EditNote(props: RouteComponentProps<ParamsProps>) {
   const history = useHistory();
+
+  const { theme } = useContext(ThemeContext);
+  document.querySelector("body")?.classList.add(`bg-${theme}`);
 
   let dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 

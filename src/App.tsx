@@ -1,6 +1,6 @@
-import React from 'react';
 import Routes from './routes';
 import initializeLocalStorage from './utils/data';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 import './styles/global.css';
 import './styles/animations.css';
@@ -10,7 +10,9 @@ function App() {
   initializeLocalStorage();
 
   return (
-    <Routes />
+    <ThemeProvider>
+      <Routes />
+    </ThemeProvider>
   );
 }
 

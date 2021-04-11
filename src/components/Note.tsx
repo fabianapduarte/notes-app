@@ -1,4 +1,8 @@
+import { useContext } from 'react';
 import { FiClock } from 'react-icons/fi';
+
+import { ThemeContext } from '../contexts/ThemeContext';
+
 import '../styles/components/note.css';
 
 interface NoteProps {
@@ -26,8 +30,10 @@ function convertMsToDate(dateInMs: number) {
 }
 
 const Note: React.FC<NoteProps> = (props) => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className={`card-note card-light ${props.className}`}>
+    <div className={`card-note card-${theme} ${props.className}`}>
       <h2>{props.title === "" ? <i>Sem título</i> : props.title}</h2>
       <small>
         <FiClock size={12} />

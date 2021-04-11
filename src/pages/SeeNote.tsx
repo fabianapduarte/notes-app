@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FiArrowLeft, FiEdit, FiTrash2 } from 'react-icons/fi';
 import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 
 import Note from '../components/Note';
 import Modal from '../components/Modal';
 import { DataNotesProps } from '../utils/NoteInterface';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 import '../styles/pages/see-note.css';
 
@@ -14,6 +15,9 @@ interface ParamsProps {
 
 function SeeNote(props: RouteComponentProps<ParamsProps>) {
   const history = useHistory();
+
+  const { theme } = useContext(ThemeContext);
+  document.querySelector("body")?.classList.add(`bg-${theme}`);
 
   const [note, setNote] = useState<DataNotesProps | null>(null);
   const [loading, setLoading] = useState<Boolean>(true);
