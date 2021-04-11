@@ -64,15 +64,15 @@ const Home = () => {
             </button>
           </Link>
           
-          <button className="btn-purple animate-up" onClick={switchTheme}>
+          <button className="btn-purple animate-up btn-mode" onClick={switchTheme}>
             { theme === "light" ? (
               <>
-                <FiMoon size={16} />
-                <span>Modo noturno</span>
+                <FiMoon className="icon-dark-mode" size={16} />
+                <span>Modo escuro</span>
               </>
             ) : (
               <>
-                <FiSun size={16} />
+                <FiSun className="icon-light-mode" size={16} />
                 <span>Modo claro</span>
               </>
             )}

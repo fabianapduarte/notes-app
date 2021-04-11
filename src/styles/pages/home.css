@@ -11,6 +11,44 @@
   background-color: var(--purple);
 }
 
+.btn-purple {
+  transition: 200ms;
+}
+
+.btn-mode:focus > .icon-light-mode {
+  animation: icon-light-mode 500ms ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes icon-light-mode {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.btn-mode:focus > .icon-dark-mode {
+  animation: icon-dark-mode 500ms ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes icon-dark-mode {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .cards-notes {
   display: flex;
   flex-direction: column;
