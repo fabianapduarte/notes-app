@@ -1,23 +1,25 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FaRegSadTear } from 'react-icons/fa';
 import { FiHome } from 'react-icons/fi';
+
+import { ThemeContext } from '../contexts/ThemeContext';
 
 import errorImg from '../assets/error.svg';
 import "../styles/components/modal.css";
+import "../styles/components/note.css";
 
 interface ModalProps {
   text: string
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
+  const { theme } = useContext(ThemeContext);
+  
   return (
     <div id="modal" className="modal">
-      <div className="modal-content animate-up delay-1">
+      <div className={`modal-content card-${theme} animate-up delay-1`}>
         <div className="modal-body">
-          <h2>
-            <span>{props.text}</span>
-            <FaRegSadTear size={22} />
-          </h2>
+          <h2>{props.text}</h2>
           <img src={errorImg} alt="Erro"/>
         </div>
 
