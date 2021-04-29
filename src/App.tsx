@@ -1,5 +1,5 @@
 import Routes from './routes';
-import initializeLocalStorage from './utils/data';
+import initializeLocalStorage from './utils/initializeLocalStorage';
 import { ThemeProvider } from './contexts/ThemeContext';
 
 import './styles/global.css';
