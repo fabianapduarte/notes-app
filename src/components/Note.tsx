@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { ReactElement, useContext } from 'react';
 import { FiClock } from 'react-icons/fi';
 
 import { ThemeContext } from '../contexts/ThemeContext';
@@ -7,7 +7,7 @@ import '../styles/components/note.css';
 
 interface NoteProps {
   title: string,
-  text: string,
+  text: string | null | ReactElement,
   created_at: number,
   className?: string
 }

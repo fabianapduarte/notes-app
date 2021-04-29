@@ -8,6 +8,7 @@ import { DataNotesProps } from '../utils/NoteInterface';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 import '../styles/pages/see-note.css';
+import { useRemark } from 'react-remark';
 
 interface ParamsProps {
   id: string
@@ -25,6 +26,8 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   const noteIdUrl = props.match.params.id;
 
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem('notes')!);
+
+  const [reactContent, setMarkdownSource] = useRemark();
 
   function loadingNote(noteIdUrl: string) {
     dataNotes.forEach(note => {
@@ -52,6 +55,10 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   useEffect(() => {
     loadingNote(noteIdUrl);
   }, [noteIdUrl]);
+
+  useEffect(() => {
+    note && setMarkdownSource(note.text)
+  }, [note])
 
   return (
     <div className="container note-fullscreen">
@@ -84,7 +91,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
             <Note
               key={note.id}
               title={note.title}
-              text={note.text}
+              text={reactContent}
               created_at={note.created_at}
               className="card-see-note animate-up delay-1"
             />
