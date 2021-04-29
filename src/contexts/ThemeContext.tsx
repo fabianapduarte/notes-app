@@ -2,6 +2,7 @@ import { createContext, ReactNode, useState } from "react";
 
 interface ThemeContextData {
   theme: string;
+  setThemePage: () => void;
   switchTheme: () => void;
 }
 
@@ -13,6 +14,10 @@ export const ThemeContext = createContext({} as ThemeContextData);
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState(localStorage.getItem("theme")!);
+
+  function setThemePage() {
+    document.querySelector("body")?.classList.add(`bg-${theme}`);
+  }
 
   function switchTheme() {
     if (theme === "light") {
@@ -37,6 +42,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     <ThemeContext.Provider
       value={{
         theme,
+        setThemePage,
         switchTheme
       }}
     >

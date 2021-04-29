@@ -4,8 +4,8 @@ import Modal from "../components/Modal";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 function PageNotFound() {
-  const { theme } = useContext(ThemeContext);
-  document.querySelector("body")?.classList.add(`bg-${theme}`);
+  const { setThemePage } = useContext(ThemeContext);
+  setThemePage();
   
   return (
     <Modal textError="Página não encontrada" />

@@ -14,8 +14,8 @@ interface ParamsProps {
 function EditNote(props: RouteComponentProps<ParamsProps>) {
   const history = useHistory();
 
-  const { theme } = useContext(ThemeContext);
-  document.querySelector("body")?.classList.add(`bg-${theme}`);
+  const { setThemePage } = useContext(ThemeContext);
+  setThemePage();
 
   let dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 

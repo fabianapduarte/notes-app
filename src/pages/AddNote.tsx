@@ -11,8 +11,8 @@ function AddNote() {
 
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
-  const { theme } = useContext(ThemeContext);
-  document.querySelector("body")?.classList.add(`bg-${theme}`);
+  const { setThemePage } = useContext(ThemeContext);
+  setThemePage();
 
   function addNewNote() {
     const title = (document.getElementById("title") as HTMLInputElement)?.value;

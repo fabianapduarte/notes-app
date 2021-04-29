@@ -17,8 +17,8 @@ interface ParamsProps {
 function SeeNote(props: RouteComponentProps<ParamsProps>) {
   const history = useHistory();
 
-  const { theme } = useContext(ThemeContext);
-  document.querySelector("body")?.classList.add(`bg-${theme}`);
+  const { setThemePage } = useContext(ThemeContext);
+  setThemePage();
 
   const [note, setNote] = useState<DataNotesProps | null>(null);
   const [loading, setLoading] = useState<Boolean>(true);

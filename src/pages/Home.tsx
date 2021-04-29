@@ -13,8 +13,8 @@ import addNote from '../assets/add-note.svg';
 const Home = () => {
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
-  const { theme, switchTheme } = useContext(ThemeContext);
-  document.querySelector("body")?.classList.add(`bg-${theme}`);
+  const { theme, setThemePage, switchTheme } = useContext(ThemeContext);
+  setThemePage();
 
   return (
     <div className="container">
