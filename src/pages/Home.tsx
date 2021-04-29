@@ -33,7 +33,7 @@ const Home = () => {
           </Link>
           
           <button className="btn-purple animate-up btn-mode" onClick={switchTheme}>
-            { theme === "light" ? (
+            {theme === "light" ? (
               <>
                 <FiMoon className="icon-dark-mode" size={16} />
                 <span>Modo escuro</span>
@@ -51,12 +51,20 @@ const Home = () => {
       {dataNotes.length === 0 ? (
         <div className="no-notes">
           <div className="text-no-notes animate-up">Você não possui notas.</div>
-          <img src={addNote} alt="Adicionar nota" className="animate-up delay-1" />
+          <img
+            src={addNote}
+            alt="Adicionar nota"
+            className="animate-up delay-1"
+          />
         </div>
       ) : (
         <div className="cards-notes">
           {dataNotes.reverse().map(note => (
-            <Link to={`note/${note.id}`} key={note.id} className="card-note-link animate-up delay-1">
+            <Link
+              to={`note/${note.id}`}
+              key={note.id}
+              className="card-note-link animate-up delay-1"
+            >
               <Note
                 key={note.id}
                 title={note.title}
