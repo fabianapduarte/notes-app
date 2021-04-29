@@ -4,7 +4,7 @@ import { FiPlus, FiMoon, FiSun } from 'react-icons/fi';
 
 import Note from '../components/Note';
 import { ThemeContext } from '../contexts/ThemeContext';
-import { DataNotesProps } from '../utils/NoteInterface';
+import { DataNotesProps } from '../interfaces/NoteInterface';
 
 import '../styles/pages/home.css';
 import addNote from '../assets/add-note.svg';

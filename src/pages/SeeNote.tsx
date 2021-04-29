@@ -4,7 +4,7 @@ import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 
 import Note from '../components/Note';
 import Modal from '../components/Modal';
-import { DataNotesProps } from '../utils/NoteInterface';
+import { DataNotesProps } from '../interfaces/NoteInterface';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 import '../styles/pages/see-note.css';

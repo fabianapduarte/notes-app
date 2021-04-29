@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import FormNote from '../components/FormNote';
 import { ThemeContext } from '../contexts/ThemeContext';
-import { DataNotesProps } from '../utils/NoteInterface';
+import { DataNotesProps } from '../interfaces/NoteInterface';
 
 function AddNote() {
   const history = useHistory();

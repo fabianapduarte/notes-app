@@ -5,7 +5,7 @@ import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 import FormNote from '../components/FormNote';
 import Modal from '../components/Modal';
 import { ThemeContext } from '../contexts/ThemeContext';
-import { DataNotesProps } from '../utils/NoteInterface';
+import { DataNotesProps } from '../interfaces/NoteInterface';
 
 interface ParamsProps {
   id: string;
