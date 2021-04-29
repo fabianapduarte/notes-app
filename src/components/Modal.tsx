@@ -9,7 +9,7 @@ import "../styles/components/modal.css";
 import "../styles/components/note.css";
 
 interface ModalProps {
-  text: string
+  textError: string
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
@@ -19,8 +19,8 @@ const Modal: React.FC<ModalProps> = (props) => {
     <div id="modal" className="modal">
       <div className={`modal-content card-${theme} animate-up delay-1`}>
         <div className="modal-body">
-          <h2>{props.text}</h2>
-          <img src={errorImg} alt="Erro"/>
+          <h2>{props.textError}</h2>
+          <img src={errorImg} alt="Erro" />
         </div>
 
         <div className="modal-footer">
@@ -32,9 +32,7 @@ const Modal: React.FC<ModalProps> = (props) => {
           </Link>
         </div>
       </div>
-      
     </div>
-    
   );
 }
 

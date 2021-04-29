@@ -99,7 +99,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
           :
           (
             <Modal
-              text="Nota não encontrada"
+              textError="Nota não encontrada"
            />
           )
         )

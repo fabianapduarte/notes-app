@@ -8,7 +8,7 @@ function PageNotFound() {
   document.querySelector("body")?.classList.add(`bg-${theme}`);
   
   return (
-    <Modal text="Página não encontrada" />
+    <Modal textError="Página não encontrada" />
   )
 }
 
