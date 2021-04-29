@@ -5,6 +5,7 @@ import { FiPlus, FiMoon, FiSun } from 'react-icons/fi';
 import Note from '../components/Note';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { DataNotesProps } from '../interfaces/NoteInterface';
+import { formatTextCard } from '../utils/textFormatting';
 
 import '../styles/pages/home.css';
 import addNote from '../assets/add-note.svg';
@@ -14,39 +15,6 @@ const Home = () => {
 
   const { theme, switchTheme } = useContext(ThemeContext);
   document.querySelector("body")?.classList.add(`bg-${theme}`);
-
-  function formatTextCard(text: string) {
-    let newString = limitTextLength(text);
-    
-    return limitTextLines(newString);
-  }
-
-  function limitTextLines(text: string) {
-    const textLines = text.split("\n");
-
-    if (textLines.length > 4) {
-      let newText = "";
-
-      for (let i = 0; i < 4; i++) {
-        newText += textLines[i];
-        
-        if (i !== 3) {
-          newText += "\n";
-        }
-      }
-
-      return `${newText}...`;
-    }
-
-    return text;
-  }
-
-  function limitTextLength(text: string) {
-    if(text.length > 180) {
-      return `${text.substr(0, 180)}...`;
-    }
-    return text;
-  }
 
   return (
     <div className="container">
