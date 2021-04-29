@@ -1,5 +1,5 @@
 import { ReactElement, useContext } from 'react';
-import { FiClock } from 'react-icons/fi';
+import { FiCalendar } from 'react-icons/fi';
 import { format } from 'date-fns';
 
 import { ThemeContext } from '../contexts/ThemeContext';
@@ -20,7 +20,7 @@ const Note: React.FC<NoteProps> = (props) => {
     <div className={`card-note card-${theme} ${props.className}`}>
       <h2>{props.title === "" ? <i>Sem título</i> : props.title}</h2>
       <small>
-        <FiClock size={12} />
+        <FiCalendar size={12} />
         <span>{format(props.created_at, "dd/MM/yyyy")}</span>
       </small>
       <div className="card-text">
