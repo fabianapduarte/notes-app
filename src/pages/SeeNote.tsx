@@ -75,19 +75,19 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
             </button>
           </Link>
 
-          <button onClick={() => deleteNote(noteIdUrl)} className="btn-red animate-up">
+          <button
+            onClick={() => deleteNote(noteIdUrl)}
+            className="btn-red animate-up"
+          >
             <FiTrash2 size={16} />
             <span>Excluir nota</span>
           </button>
         </div>
       </header>
 
-      {loading === false
-        ?
-        (
-          note
-          ?
-          (
+      {
+        loading === false ? (
+          note ? (
             <Note
               key={note.id}
               title={note.title}
@@ -95,16 +95,10 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
               created_at={note.created_at}
               className="card-see-note animate-up delay-1"
             />
+          ) : (
+            <Modal textError="Nota não encontrada" />
           )
-          :
-          (
-            <Modal
-              textError="Nota não encontrada"
-           />
-          )
-        )
-        :
-        console.log('loading')
+        ) : ""
       }
     </div>
   );

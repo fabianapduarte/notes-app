@@ -86,28 +86,19 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
         </div>
       </header>
 
-      {loading === false
-        ?
-        (
-          note
-          ?
-          (
+      {
+        loading === false ? (
+          note ? (
             <FormNote
               key={note.id}
               className="form-card-note animate-up delay-1"
               title={note.title}
               text={note.text}
             />
+          ) : (
+            <Modal textError="Nota não encontrada" />
           )
-          :
-          (
-            <Modal
-              textError="Nota não encontrada"
-           />
-          )
-        )
-        :
-        console.log('loading')
+        ) : ""
       }
     </div>
   );

@@ -55,7 +55,12 @@ function AddNote() {
             </button>
           </Link>
 
-          <button type="submit" form="form-note" onClick={addNewNote} className="btn-green animate-up">
+          <button
+            type="submit"
+            form="form-note"
+            onClick={addNewNote}
+            className="btn-green animate-up"
+          >
             <FiCheck size={16} />
             <span>Salvar nota</span>
           </button>
