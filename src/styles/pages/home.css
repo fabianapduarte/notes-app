@@ -59,6 +59,10 @@
   transition: 0.2s;
 }
 
+.card-note-home h1 {
+  font-size: 1.5rem;
+}
+
 .card-note-home:hover {
   box-shadow: 0px 8px 13px 0px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);

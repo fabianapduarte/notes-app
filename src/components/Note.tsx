@@ -18,7 +18,7 @@ const Note: React.FC<NoteProps> = (props) => {
 
   return (
     <div className={`card-note card-${theme} ${props.className}`}>
-      <h2>{props.title === "" ? <i>Sem título</i> : props.title}</h2>
+      <h1>{props.title === "" ? <i>Sem título</i> : props.title}</h1>
       <small>
         <FiCalendar size={12} />
         <span>{format(props.created_at, "dd/MM/yyyy")}</span>
