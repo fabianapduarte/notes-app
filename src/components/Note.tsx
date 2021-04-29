@@ -1,5 +1,6 @@
 import { ReactElement, useContext } from 'react';
 import { FiClock } from 'react-icons/fi';
+import { format } from 'date-fns';
 
 import { ThemeContext } from '../contexts/ThemeContext';
 
@@ -12,23 +13,6 @@ interface NoteProps {
   className?: string
 }
 
-function convertMsToDate(dateInMs: number) {
-  const noteCreationDateInMs = new Date(dateInMs);
-
-  // conversão da data
-  const date = {
-    hours: noteCreationDateInMs.getHours(),
-    minutes: noteCreationDateInMs.getMinutes(),
-    day: noteCreationDateInMs.getDate(),
-    month: noteCreationDateInMs.getMonth(),
-    year: noteCreationDateInMs.getFullYear()
-  }
-
-  const dateFormated = `${date.day}/${date.month}/${date.year} às ${date.hours}:${date.minutes}`;
-
-  return dateFormated;
-}
-
 const Note: React.FC<NoteProps> = (props) => {
   const { theme } = useContext(ThemeContext);
 
@@ -37,9 +21,11 @@ const Note: React.FC<NoteProps> = (props) => {
       <h2>{props.title === "" ? <i>Sem título</i> : props.title}</h2>
       <small>
         <FiClock size={12} />
-        <span>{convertMsToDate(props.created_at)}</span>
+        <span>{format(props.created_at, "dd/MM/yyyy")}</span>
       </small>
-      <div className="card-text">{props.text === "" ? <i>Sem texto</i> : props.text}</div>
+      <div className="card-text">
+        {props.text === "" ? <i>Sem texto</i> : props.text}
+      </div>
       {props.children}
     </div>
   );
