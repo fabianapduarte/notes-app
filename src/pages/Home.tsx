@@ -2,10 +2,9 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FiPlus, FiMoon, FiSun } from 'react-icons/fi';
 
-import Note from '../components/Note';
+import CardNoteHome from '../components/CardNoteHome';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { DataNotesProps } from '../interfaces/NoteInterface';
-import { formatTextCard } from '../utils/textCardFormatting';
 
 import '../styles/pages/home.css';
 import addNote from '../assets/add-note.svg';
@@ -65,12 +64,10 @@ const Home = () => {
               key={note.id}
               className="card-note-link animate-up delay-1"
             >
-              <Note
+              <CardNoteHome
                 key={note.id}
                 title={note.title}
-                text={formatTextCard(note.text)}
                 created_at={note.created_at}
-                className="card-note-home"
               />
             </Link>
           ))}
