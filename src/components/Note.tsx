@@ -8,7 +8,7 @@ import '../styles/components/note.css';
 
 interface NoteProps {
   title: string,
-  text: string | null | ReactElement,
+  text: ReactElement | null,
   created_at: number,
   className?: string
 }
@@ -23,10 +23,7 @@ const Note: React.FC<NoteProps> = (props) => {
         <FiCalendar size={12} />
         <span>{format(props.created_at, "dd/MM/yyyy")}</span>
       </small>
-      <div className="card-text">
-        {props.text === "" ? <i>Sem texto</i> : props.text}
-      </div>
-      {props.children}
+      <div className="card-text">{props.text}</div>
     </div>
   );
 }
