@@ -1,9 +1,13 @@
 .card-text {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .card-see-note {
   height: 100%;
   flex-grow: 1;
   overflow-y: auto;
+}
+
+.card-see-note h1 {
+  margin-bottom: 1rem;
 }
