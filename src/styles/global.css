@@ -72,6 +72,28 @@ hr {
   background-color: var(--purple);
 }
 
+ul, ol {
+  display: flex;
+  flex-direction: column;
+}
+
+ul ::marker {
+  font-size: 120%;
+}
+
+li {
+  white-space: nowrap;
+  margin-left: 2rem;
+}
+
+ol li p {
+  margin-left: 5px;
+}
+
+li p {
+  display: inline-block;
+}
+
 button {
   display: flex;
   align-items: center;
