@@ -27,6 +27,7 @@ const FormNote: React.FC<FormProps> = (props) => {
         placeholder="Título"
         maxLength={100}
         defaultValue={props.title}
+        autoComplete="off"
       />
       <textarea
         name="text"
