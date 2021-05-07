@@ -1,19 +1,20 @@
 :root {
   --bg-light: #F2F3F5;
   --bg-dark: #1E1428;
-  --white: #FFFFFF;
+  --white: #FAFAFA;
   --black: #0F0F0F;
   --purple: #9966CC;
   --purple-dark: #2D1E3D;
   --red: #EB5757;
   --green: #6FCF97;
-  --gray: #686868;
+  --gray: #757575;
   --gray-light: #BDBDBD;
 }
 
 * {
   margin: 0;
   padding: 0;
+  outline: none;
   box-sizing: border-box;
 }
 
@@ -39,10 +40,36 @@ body, input, button, textarea {
 
 a {
   text-decoration: none;
+  color: var(--purple);
 }
 
-i {
-  color: var(--gray);
+code {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+
+  background-color: rgba(151, 104, 209, 0.2);
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+blockquote {
+  background-color: rgba(151, 104, 209, 0.05);
+  border-radius: 5px;
+  border-left: 5px solid var(--purple);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+hr {
+  border-color: var(--purple);
+  border-width: 1.5px;
+  border-style: solid;
+  background-color: var(--purple);
 }
 
 button {
