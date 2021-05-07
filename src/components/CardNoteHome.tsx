@@ -17,7 +17,7 @@ const CardNoteHome: React.FC<NoteHomeProps> = (props) => {
 
   return (
     <div className={`card-note card-${theme} card-note-home`}>
-      <h1>{props.title === "" ? <i>Sem título</i> : props.title}</h1>
+      <h1>{props.title === "" ? <span className="no-title">Sem título</span> : props.title}</h1>
       <small>
         <FiCalendar size={12} />
         <span>{format(props.created_at, "dd/MM/yyyy")}</span>

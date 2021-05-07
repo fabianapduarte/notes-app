@@ -33,12 +33,17 @@
   font-size: 2rem;
 }
 
+.card-note .no-title {
+  font-style: italic;
+  color: var(--gray);
+}
+
 .card-note small {
   display: flex;
   align-items: center;
 
   font-style: italic;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .card-note small > span {
