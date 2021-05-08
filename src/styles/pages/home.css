@@ -1,10 +1,15 @@
+.logo-title {
+  width: fit-content;
+  position: relative;
+}
+
 .logo-title h1 {
   font-size: 2rem;
   pointer-events: none;
 }
 
 .logo-title .marker {
-  position: relative;
+  position: absolute;
   height: 39%;
   width: calc(100% + 10px);
   transform: translate(-5px, -100%);
