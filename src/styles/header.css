@@ -1,8 +1,7 @@
 header {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 
   margin-bottom: 3rem;
 }
@@ -27,12 +26,15 @@ header .header-buttons {
   }
 }
 
-@media(min-width: 370px) {
-  .header-buttons button:first-child {
-    margin-left: 1rem;
+@media(min-width: 375px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   header .header-buttons {
     margin-top: 0;
+    margin-left: 1rem;
   }
 }
