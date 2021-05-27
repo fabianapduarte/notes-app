@@ -67,19 +67,27 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
   return (
     <div className="container note-fullscreen">
       <header className="align-items-header">
-        <Link to="/" className="animate-up">
+        <Link
+          to="/"
+          className="animate-up"
+          aria-label="Voltar para a página inicial"
+        >
           <FiArrowLeft size={24} color="#9768D1" />
         </Link>
 
         <div className="header-buttons">
-          <Link to="/">
+          <Link to="/" aria-label="Cancelar">
             <button className="btn-gray animate-up">
               <FiX size={16} />
               <span>Cancelar</span>
             </button>
           </Link>
 
-          <button className="btn-green animate-up" onClick={() => updateNote(noteIdUrl)}>
+          <button
+            className="btn-green animate-up"
+            onClick={() => updateNote(noteIdUrl)}
+            aria-label="Salvar nota"
+          >
             <FiCheck size={16} />
             <span>Salvar nota</span>
           </button>

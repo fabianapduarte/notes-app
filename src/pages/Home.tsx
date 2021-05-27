@@ -25,25 +25,23 @@ const Home = () => {
 
         <div className="header-buttons">
           <Link to="/add">
-            <button className="btn-purple animate-up">
+            <button className="btn-purple animate-up" aria-label="Adicionar nota">
               <FiPlus size={16} />
               <span>Adicionar nota</span>
             </button>
           </Link>
-          
-          <button className="btn-purple animate-up btn-mode" onClick={switchTheme}>
-            {theme === "light" ? (
-              <>
-                <FiMoon className="icon-dark-mode" size={16} />
-                <span>Modo escuro</span>
-              </>
-            ) : (
-              <>
-                <FiSun className="icon-light-mode" size={16} />
-                <span>Modo claro</span>
-              </>
-            )}
-          </button>
+
+          {theme === "light" ? (
+            <button className="btn-purple animate-up btn-mode" onClick={switchTheme} aria-label="Modo escuro">
+              <FiMoon className="icon-dark-mode" size={16} />
+              <span>Modo escuro</span>
+            </button>
+          ) : (
+            <button className="btn-purple animate-up btn-mode" onClick={switchTheme} aria-label="Modo claro">
+              <FiSun className="icon-light-mode" size={16} />
+              <span>Modo claro</span>
+            </button>
+          )}
         </div>
       </header>
 

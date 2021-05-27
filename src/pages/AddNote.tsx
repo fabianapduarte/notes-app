@@ -43,12 +43,16 @@ function AddNote() {
   return (
     <div className="container note-fullscreen">
       <header className="align-items-header">
-        <Link to="/" className="animate-up">
+        <Link
+          to="/"
+          className="animate-up"
+          aria-label="Voltar para a página inicial"
+        >
           <FiArrowLeft size={24} color="#9768D1" />
         </Link>
 
         <div className="header-buttons">
-          <Link to="/">
+          <Link to="/" aria-label="Cancelar">
             <button className="btn-gray animate-up">
               <FiX size={16} />
               <span>Cancelar</span>
@@ -60,6 +64,7 @@ function AddNote() {
             form="form-note"
             onClick={addNewNote}
             className="btn-green animate-up"
+            aria-label="Salvar nota"
           >
             <FiCheck size={16} />
             <span>Salvar nota</span>

@@ -63,13 +63,20 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
   return (
     <div className="container note-fullscreen">
       <header className="align-items-header">
-        <Link to="/" className="animate-up">
+        <Link
+          to="/"
+          className="animate-up"
+          aria-label="Voltar para a página inicial"
+        >
           <FiArrowLeft size={24} color="#9768D1" />
         </Link>
 
         <div className="header-buttons">
           <Link to={`/edit/${noteIdUrl}`}>
-            <button className="btn-purple animate-up">
+            <button
+              className="btn-purple animate-up"
+              aria-label="Editar nota"
+            >
               <FiEdit size={16} />
               <span>Editar nota</span>
             </button>
@@ -78,6 +85,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
           <button
             onClick={() => deleteNote(noteIdUrl)}
             className="btn-red animate-up"
+            aria-label="Excluir nota"
           >
             <FiTrash2 size={16} />
             <span>Excluir nota</span>
