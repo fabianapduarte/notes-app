@@ -1,13 +1,13 @@
 :root {
-  --bg-light: #F2F3F5;
-  --bg-dark: #1E1428;
-  --white: #FAFAFA;
-  --black: #0F0F0F;
-  --purple: #9966CC;
-  --purple-dark: #2D1E3D;
+  --bg-light: #F5F4F5;
+  --bg-dark: #1A181B;
+  --white: #EBEBEB;
+  --black: #2A262B;
+  --purple: #CDDAFD;
+  --purple-dark: #2A262B;
   --red: #EB5757;
   --green: #6FCF97;
-  --gray: #757575;
+  --gray: #999999;
   --gray-light: #BDBDBD;
 }
 
@@ -47,13 +47,13 @@ code {
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
 
-  background-color: rgba(151, 104, 209, 0.2);
+  background-color: rgba(205, 218, 253, 0.3);
   font-family: monospace;
   font-size: 1rem;
 }
 
 blockquote {
-  background-color: rgba(151, 104, 209, 0.05);
+  background-color: rgba(205, 218, 253, 0.2);
   border-radius: 5px;
   border-left: 5px solid var(--purple);
   padding: 1rem;
