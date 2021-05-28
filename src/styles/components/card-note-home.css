@@ -1,4 +1,7 @@
 .card-note-home {
+  border-top: 5px solid var(--purple);
+  border-radius: 5px;
+
   transition: 0.2s;
 }
 
