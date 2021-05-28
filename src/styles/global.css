@@ -105,7 +105,7 @@ button {
   margin-left: 1rem;
   padding: 1rem;
   border: none;
-  border-radius: 15px;
+  border-radius: 5px;
 
   color: var(--white);
   font-size: 1rem;
