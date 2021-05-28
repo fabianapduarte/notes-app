@@ -6,10 +6,6 @@ header {
   margin-bottom: 3rem;
 }
 
-header.align-items-header {
-  align-items: center;
-}
-
 header .header-buttons {
   margin-top: 1rem;
   display: flex;

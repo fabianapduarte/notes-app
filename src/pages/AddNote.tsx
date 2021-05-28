@@ -42,7 +42,7 @@ function AddNote() {
 
   return (
     <div className="container note-fullscreen">
-      <header className="align-items-header">
+      <header>
         <Link
           to="/"
           className="animate-up"
