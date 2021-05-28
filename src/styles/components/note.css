@@ -12,7 +12,7 @@
 }
 
 .card-note.card-light small {
-  color: var(--gray-light);
+  color: var(--gray);
 }
 
 .card-dark {
