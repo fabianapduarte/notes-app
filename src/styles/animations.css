@@ -19,21 +19,3 @@
 .delay-1 {
   animation-delay: 250ms;
 }
-
-.animate-marker {
-  opacity: 0;
-
-  animation: marker 1s ease 500ms forwards;
-}
-
-@keyframes marker {
-  from {
-    opacity: 0;
-    width: 0;
-  }
-
-  to {
-    opacity: 1;
-    width: calc(100% + 10px);
-  }
-}

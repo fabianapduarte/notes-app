@@ -20,7 +20,6 @@ const Home = () => {
       <header>
         <div className="logo-title">
           <h1 className="animate-up">Suas anotações</h1>
-          <div className="marker animate-marker delay-1"></div>
         </div>
 
         <div className="header-buttons">
