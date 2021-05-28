@@ -3,7 +3,7 @@ import { FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 
 import FormNote from '../components/FormNote';
-import Modal from '../components/Modal';
+import ModalError from '../components/ModalError';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { DataNotesProps } from '../interfaces/NoteInterface';
 
@@ -104,7 +104,7 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
               text={note.text}
             />
           ) : (
-            <Modal textError="Nota não encontrada" />
+            <ModalError textError="Nota não encontrada" />
           )
         ) : ""
       }

@@ -3,7 +3,7 @@ import { FiArrowLeft, FiEdit, FiTrash2 } from 'react-icons/fi';
 import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 
 import Note from '../components/Note';
-import Modal from '../components/Modal';
+import ModalError from '../components/ModalError';
 import { DataNotesProps } from '../interfaces/NoteInterface';
 import { ThemeContext } from '../contexts/ThemeContext';
 
@@ -104,7 +104,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
               className="card-see-note animate-up delay-1"
             />
           ) : (
-            <Modal textError="Nota não encontrada" />
+            <ModalError textError="Nota não encontrada" />
           )
         ) : ""
       }

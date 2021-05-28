@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import Modal from "../components/Modal";
+import ModalError from "../components/ModalError";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 function PageNotFound() {
@@ -8,7 +8,7 @@ function PageNotFound() {
   setThemePage();
   
   return (
-    <Modal textError="Página não encontrada" />
+    <ModalError textError="Página não encontrada" />
   )
 }
 

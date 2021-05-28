@@ -12,7 +12,7 @@ interface ModalProps {
   textError: string
 }
 
-const Modal: React.FC<ModalProps> = (props) => {
+const ModalError: React.FC<ModalProps> = (props) => {
   const { theme } = useContext(ThemeContext);
   
   return (
@@ -36,4 +36,4 @@ const Modal: React.FC<ModalProps> = (props) => {
   );
 }
 
-export default Modal;
+export default ModalError;
