@@ -70,6 +70,16 @@
   margin-left: 0.5rem;
 }
 
+.themes.mode .btn-mode-light {
+  background-color: var(--bg-light);
+  color: var(--text-black);
+}
+
+.themes.mode .btn-mode-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
 .themes .color {
   width: 3rem;
   height: 3rem;
