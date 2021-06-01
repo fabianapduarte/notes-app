@@ -51,29 +51,38 @@ const ModalTheme = () => {
               <div
                 className="color green"
                 onClick={() => switchColor("green")}
+                aria-label="Cor verde claro"
               />
               <div
                 className="color purple"
                 onClick={() => switchColor("purple")}
+                aria-label="Cor lilás"
               />
               <div
                 className="color blue"
                 onClick={() => switchColor("blue")}
+                aria-label="Cor azul claro"
               />
               <div
                 className="color pink"
                 onClick={() => switchColor("pink")}
+                aria-label="Cor rosa claro"
               />
               <div
                 className="color yellow"
                 onClick={() => switchColor("yellow")}
+                aria-label="Cor amarelo claro"
               />
             </div>
           </section>
         </main>
 
         <footer>
-          <button className={`btn-${color}`} onClick={closeModal}>
+          <button
+            className={`btn-${color}`}
+            onClick={closeModal}
+            aria-label="Fechar"
+          >
             <FiX size={16} />
             <span>Fechar</span>
           </button>
