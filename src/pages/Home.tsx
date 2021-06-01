@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FiPlus, FiMoon, FiSun } from 'react-icons/fi';
+import { FiPlus, FiSliders } from 'react-icons/fi';
 
 import CardNoteHome from '../components/CardNoteHome';
+import ModalTheme, { openModal } from '../components/ModalTheme';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { DataNotesProps } from '../interfaces/NoteInterface';
 
@@ -12,7 +13,7 @@ import addNote from '../assets/add-note.svg';
 const Home = () => {
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
-  const { theme, setThemePage, switchTheme } = useContext(ThemeContext);
+  const { setThemePage } = useContext(ThemeContext);
   setThemePage();
 
   return (
@@ -30,17 +31,14 @@ const Home = () => {
             </button>
           </Link>
 
-          {theme === "light" ? (
-            <button className="btn-purple animate-up btn-mode" onClick={switchTheme} aria-label="Modo escuro">
-              <FiMoon className="icon-dark-mode" size={16} />
-              <span>Modo escuro</span>
-            </button>
-          ) : (
-            <button className="btn-purple animate-up btn-mode" onClick={switchTheme} aria-label="Modo claro">
-              <FiSun className="icon-light-mode" size={16} />
-              <span>Modo claro</span>
-            </button>
-          )}
+          <button
+            className="btn-purple animate-up btn-mode"
+            onClick={openModal}
+            aria-label="Alterar tema"
+          >
+            <FiSliders size={16} />
+            <span>Alterar tema</span>
+          </button>
         </div>
       </header>
 
@@ -70,6 +68,8 @@ const Home = () => {
           ))}
         </div>
       )}
+
+      <ModalTheme />
     </div>
   );
 }
