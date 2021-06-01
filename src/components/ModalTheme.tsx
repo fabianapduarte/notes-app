@@ -5,6 +5,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 import "../styles/components/modal.css";
 import "../styles/components/note.css";
+import "../styles/animations.css";
 
 export function openModal() {
   document.getElementById("modal")?.classList.remove("modal-display-none");
