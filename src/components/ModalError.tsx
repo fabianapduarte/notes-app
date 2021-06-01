@@ -13,7 +13,7 @@ interface ModalProps {
 }
 
 const ModalError: React.FC<ModalProps> = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme, color } = useContext(ThemeContext);
   
   return (
     <div id="modal" className="modal modal-error">
@@ -25,7 +25,7 @@ const ModalError: React.FC<ModalProps> = (props) => {
 
         <footer>
           <Link to="/">
-            <button className="btn-purple">
+            <button className={`btn-${color}`}>
               <FiHome size={16} />
               <span>Voltar para a página inicial</span>
             </button>

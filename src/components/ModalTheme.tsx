@@ -26,7 +26,7 @@ const ModalTheme = () => {
             <strong>Tema</strong>
             <div className="themes mode">
               <button
-                className="btn-purple animate-up btn-mode"
+                className={`btn-${color} animate-up btn-mode`}
                 onClick={() => switchTheme("light")}
                 aria-label="Modo claro"
               >
@@ -35,7 +35,7 @@ const ModalTheme = () => {
               </button>
 
               <button
-                className="btn-purple animate-up btn-mode"
+                className={`btn-${color} animate-up btn-mode`}
                 onClick={() => switchTheme("dark")}
                 aria-label="Modo escuro"
               >
@@ -73,7 +73,7 @@ const ModalTheme = () => {
         </main>
 
         <footer>
-          <button className="btn-purple" onClick={closeModal}>
+          <button className={`btn-${color}`} onClick={closeModal}>
             <FiX size={16} />
             <span>Fechar</span>
           </button>

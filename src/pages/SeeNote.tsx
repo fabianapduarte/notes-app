@@ -17,7 +17,7 @@ interface ParamsProps {
 function SeeNote(props: RouteComponentProps<ParamsProps>) {
   const history = useHistory();
 
-  const { setThemePage } = useContext(ThemeContext);
+  const { setThemePage, color } = useContext(ThemeContext);
   setThemePage();
 
   const [note, setNote] = useState<DataNotesProps | null>(null);
@@ -74,7 +74,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
         <div className="header-buttons">
           <Link to={`/edit/${noteIdUrl}`}>
             <button
-              className="btn-purple animate-up"
+              className={`btn-${color} animate-up`}
               aria-label="Editar nota"
             >
               <FiEdit size={16} />
@@ -84,7 +84,7 @@ function SeeNote(props: RouteComponentProps<ParamsProps>) {
 
           <button
             onClick={() => deleteNote(noteIdUrl)}
-            className="btn-red animate-up"
+            className={`btn-${color} animate-up`}
             aria-label="Excluir nota"
           >
             <FiTrash2 size={16} />

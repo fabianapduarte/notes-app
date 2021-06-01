@@ -11,7 +11,7 @@ function AddNote() {
 
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
-  const { setThemePage } = useContext(ThemeContext);
+  const { setThemePage, color } = useContext(ThemeContext);
   setThemePage();
 
   function addNewNote() {
@@ -53,7 +53,7 @@ function AddNote() {
 
         <div className="header-buttons">
           <Link to="/" aria-label="Cancelar">
-            <button className="btn-gray animate-up">
+            <button className={`btn-outline-${color} animate-up`}>
               <FiX size={16} />
               <span>Cancelar</span>
             </button>
@@ -63,7 +63,7 @@ function AddNote() {
             type="submit"
             form="form-note"
             onClick={addNewNote}
-            className="btn-green animate-up"
+            className={`btn-${color} animate-up`}
             aria-label="Salvar nota"
           >
             <FiCheck size={16} />

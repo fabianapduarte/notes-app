@@ -13,7 +13,7 @@ import addNote from '../assets/add-note.svg';
 const Home = () => {
   const dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
 
-  const { setThemePage } = useContext(ThemeContext);
+  const { setThemePage, color } = useContext(ThemeContext);
   setThemePage();
 
   return (
@@ -25,14 +25,17 @@ const Home = () => {
 
         <div className="header-buttons">
           <Link to="/add">
-            <button className="btn-purple animate-up" aria-label="Adicionar nota">
+            <button
+              className={`btn-${color} animate-up`}
+              aria-label="Adicionar nota"
+            >
               <FiPlus size={16} />
               <span>Adicionar nota</span>
             </button>
           </Link>
 
           <button
-            className="btn-purple animate-up btn-mode"
+            className={`btn-${color} animate-up btn-mode`}
             onClick={openModal}
             aria-label="Alterar tema"
           >

@@ -14,7 +14,7 @@ interface ParamsProps {
 function EditNote(props: RouteComponentProps<ParamsProps>) {
   const history = useHistory();
 
-  const { setThemePage } = useContext(ThemeContext);
+  const { setThemePage, color } = useContext(ThemeContext);
   setThemePage();
 
   let dataNotes: DataNotesProps[] = JSON.parse(localStorage.getItem("notes")!);
@@ -77,14 +77,14 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
 
         <div className="header-buttons">
           <Link to="/" aria-label="Cancelar">
-            <button className="btn-gray animate-up">
+            <button className={`btn-outline-${color} animate-up`}>
               <FiX size={16} />
               <span>Cancelar</span>
             </button>
           </Link>
 
           <button
-            className="btn-green animate-up"
+            className={`btn-${color} animate-up`}
             onClick={() => updateNote(noteIdUrl)}
             aria-label="Salvar nota"
           >
