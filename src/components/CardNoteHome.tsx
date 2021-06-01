@@ -13,10 +13,10 @@ interface NoteHomeProps {
 }
 
 const CardNoteHome: React.FC<NoteHomeProps> = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme, color } = useContext(ThemeContext);
 
   return (
-    <div className={`card-note card-${theme} card-note-home`}>
+    <div className={`card-note card-${theme} card-note-home ${color}`}>
       <h1>{props.title === "" ? <span className="no-title">Sem título</span> : props.title}</h1>
       <small>
         <FiCalendar size={12} />

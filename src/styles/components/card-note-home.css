@@ -1,8 +1,28 @@
 .card-note-home {
-  border-top: 5px solid var(--purple);
+  border-top: 5px solid;
   border-radius: 5px;
 
   transition: 0.2s;
+}
+
+.card-note-home.purple {
+  border-color: var(--purple);
+}
+
+.card-note-home.green {
+  border-color: var(--green);
+}
+
+.card-note-home.blue {
+  border-color: var(--blue);
+}
+
+.card-note-home.pink {
+  border-color: var(--pink);
+}
+
+.card-note-home.yellow {
+  border-color: var(--yellow);
 }
 
 .card-note-home:hover {
