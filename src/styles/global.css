@@ -154,7 +154,7 @@ button:focus {
 }
 
 .bg-light, .bg-dark {
-  transition: 300ms;
+  transition: background-color 300ms;
 }
 
 .container {
