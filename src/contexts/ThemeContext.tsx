@@ -2,8 +2,10 @@ import { createContext, ReactNode, useState } from "react";
 
 interface ThemeContextData {
   theme: string;
+  color: string;
   setThemePage: () => void;
   switchTheme: () => void;
+  switchColor: (color: string) => void;
 }
 
 interface ThemeProviderProps {
@@ -14,6 +16,7 @@ export const ThemeContext = createContext({} as ThemeContextData);
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState(localStorage.getItem("theme")!);
+  const [color, setColor] = useState(localStorage.getItem("color")!);
 
   function setThemePage() {
     document.querySelector("body")?.classList.add(`bg-${theme}`);
@@ -38,12 +41,19 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     }
   }
 
+  function switchColor(color: string) {
+    setColor(color);
+    localStorage.setItem("color", color);
+  }
+
   return (
     <ThemeContext.Provider
       value={{
         theme,
+        color,
         setThemePage,
-        switchTheme
+        switchTheme,
+        switchColor
       }}
     >
      { children }
