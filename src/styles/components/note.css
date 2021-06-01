@@ -7,8 +7,8 @@
 }
 
 .card-light {
-  background-color: #fafafa;
-  color: var(--black);
+  background-color: var(--card-light);
+  color: var(--text-black);
 }
 
 .card-note.card-light small {
@@ -16,8 +16,8 @@
 }
 
 .card-dark {
-  background-color: var(--purple-dark);
-  color: var(--white);
+  background-color: var(--card-dark);
+  color: var(--text-light);
 }
 
 .card-note.card-dark small {

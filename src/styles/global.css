@@ -1,14 +1,16 @@
 :root {
   --bg-light: #F5F4F5;
   --bg-dark: #1A181B;
-  --white: #E0E0E0;
-  --black: #333333;
+  --text-light: #E0E0E0;
+  --text-black: #333333;
+  --card-light: #FEFEFE;
+  --card-dark: #2A262B;
+  --blue: #ADE8F4;
   --purple: #CDDAFD;
-  --purple-dark: #2A262B;
-  --red: #EB5757;
-  --green: #6FCF97;
+  --green: #C7F9CC;
+  --yellow: #FDFFB6;
+  --pink: #FFC8DD;
   --gray: #999999;
-  --gray-light: #BDBDBD;
 }
 
 * {
@@ -107,7 +109,7 @@ button {
   border: none;
   border-radius: 5px;
 
-  color: var(--black);
+  color: var(--text-black);
   font-size: 1rem;
   cursor: pointer;
   transition: .2s;
@@ -143,12 +145,12 @@ button:focus {
 
 .bg-light {
   background-color: var(--bg-light);
-  color: var(--black);
+  color: var(--text-black);
 }
 
 .bg-dark {
   background-color: var(--bg-dark);
-  color: var(--white);
+  color: var(--text-light);
 }
 
 .bg-light, .bg-dark {

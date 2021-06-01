@@ -78,23 +78,23 @@
 }
 
 .themes .color.green {
-  background-color: #C7F9CC;
+  background-color: var(--green);
 }
 
 .themes .color.purple {
-  background-color: #CDDAFD;
+  background-color: var(--purple);
 }
 
 .themes .color.blue {
-  background-color: #ADE8F4;
+  background-color: var(--blue);
 }
 
 .themes .color.pink {
-  background-color: #FFC8DD;
+  background-color: var(--pink);
 }
 
 .themes .color.yellow {
-  background-color: #FDFFB6;
+  background-color: var(--yellow);
 }
 
 @media(min-width: 720px) {
