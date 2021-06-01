@@ -72,7 +72,7 @@ function EditNote(props: RouteComponentProps<ParamsProps>) {
           className="animate-up"
           aria-label="Voltar para a página inicial"
         >
-          <FiArrowLeft size={24} color="#9768D1" />
+          <FiArrowLeft size={24} color="#999999" />
         </Link>
 
         <div className="header-buttons">
