@@ -14,12 +14,12 @@ interface NoteProps {
 }
 
 const Note: React.FC<NoteProps> = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme, color } = useContext(ThemeContext);
 
   return (
     <div className={`card-note card-${theme} ${props.className}`}>
       <h1>{props.title === "" ? <span className="no-title">Sem título</span> : props.title}</h1>
-      <small>
+      <small className={theme === "dark" ? `${color}` : ""}>
         <FiCalendar size={12} />
         <span>{format(props.created_at, "dd/MM/yyyy")}</span>
       </small>

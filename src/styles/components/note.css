@@ -20,8 +20,24 @@
   color: var(--text-light);
 }
 
-.card-note.card-dark small {
+.card-note.card-dark small.purple {
   color: var(--purple);
+}
+
+.card-note.card-dark small.blue {
+  color: var(--blue);
+}
+
+.card-note.card-dark small.green {
+  color: var(--green);
+}
+
+.card-note.card-dark small.yellow {
+  color: var(--yellow);
+}
+
+.card-note.card-dark small.pink {
+  color: var(--pink);
 }
 
 .card-light, .card-dark {
