@@ -16,21 +16,21 @@ const ModalError: React.FC<ModalProps> = (props) => {
   const { theme } = useContext(ThemeContext);
   
   return (
-    <div id="modal" className="modal">
+    <div id="modal" className="modal modal-error">
       <div className={`modal-content card-${theme} animate-up delay-1`}>
-        <div className="modal-body">
+        <main>
           <h2>{props.textError}</h2>
           <img src={errorImg} alt="Erro" />
-        </div>
+        </main>
 
-        <div className="modal-footer">
+        <footer>
           <Link to="/">
             <button className="btn-purple">
               <FiHome size={16} />
               <span>Voltar para a página inicial</span>
             </button>
           </Link>
-        </div>
+        </footer>
       </div>
     </div>
   );
