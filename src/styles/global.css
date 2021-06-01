@@ -131,50 +131,20 @@ button:focus {
   background-color: var(--purple);
 }
 
-.btn-outline-purple {
-  background-color: transparent;
-  border: 1px solid var(--purple);
-  color: var(--purple);
-}
-
 .btn-green {
   background-color: var(--green);
-}
-
-.btn-outline-green {
-  background-color: transparent;
-  border: 1px solid var(--green);
-  color: var(--green);
 }
 
 .btn-blue {
   background-color: var(--blue);
 }
 
-.btn-outline-blue {
-  background-color: transparent;
-  border: 1px solid var(--blue);
-  color: var(--blue);
-}
-
 .btn-yellow {
   background-color: var(--yellow);
 }
 
-.btn-outline-yellow {
-  background-color: transparent;
-  border: 1px solid var(--yellow);
-  color: var(--yellow);
-}
-
 .btn-pink {
   background-color: var(--pink);
-}
-
-.btn-outline-pink {
-  background-color: transparent;
-  border: 1px solid var(--pink);
-  color: var(--pink);
 }
 
 .bg-light {

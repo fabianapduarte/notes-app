@@ -53,7 +53,7 @@ function AddNote() {
 
         <div className="header-buttons">
           <Link to="/" aria-label="Cancelar">
-            <button className={`btn-outline-${color} animate-up`}>
+            <button className={`btn-${color} animate-up`}>
               <FiX size={16} />
               <span>Cancelar</span>
             </button>
