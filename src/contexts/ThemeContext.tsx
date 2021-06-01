@@ -4,7 +4,7 @@ interface ThemeContextData {
   theme: string;
   color: string;
   setThemePage: () => void;
-  switchTheme: () => void;
+  switchTheme: (theme: string) => void;
   switchColor: (color: string) => void;
 }
 
@@ -22,8 +22,8 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     document.querySelector("body")?.classList.add(`bg-${theme}`);
   }
 
-  function switchTheme() {
-    if (theme === "light") {
+  function switchTheme(theme: string) {
+    if (theme === "dark") {
       setTheme("dark");
 
       document.querySelector("body")?.classList.remove("bg-light");
@@ -31,7 +31,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
       localStorage.setItem("theme", "dark");
     } 
-    else {
+    else if (theme === "light") {
       setTheme("light");
 
       document.querySelector("body")?.classList.remove("bg-dark");
