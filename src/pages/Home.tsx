@@ -46,7 +46,7 @@ const Home = () => {
       </header>
 
       {dataNotes.length === 0 ? (
-        <div className="no-notes">
+        <div className={`no-notes ${color}-mode`}>
           <div className="text-no-notes animate-up">Você não possui notas.</div>
           <img
             src={addNote}

@@ -18,15 +18,40 @@
 }
 
 .no-notes .text-no-notes {
-  background-color: rgba(151, 104, 209, 0.5);
-  border: 1px solid var(--purple);
-  border-radius: 10px;
+  border: 1px solid;
+  border-radius: 5px;
 
+  color: var(--text-black);
   font-size: 1rem;
   text-align: center;
 
   padding: 0.5rem 2.5rem;
   margin-bottom: 0.5rem;
+}
+
+.no-notes.blue-mode .text-no-notes {
+  border-color: var(--blue);
+  background-color: var(--blue);
+}
+
+.no-notes.purple-mode .text-no-notes {
+  border-color: var(--purple);
+  background-color: var(--purple);
+}
+
+.no-notes.green-mode .text-no-notes {
+  border-color: var(--green);
+  background-color: var(--green);
+}
+
+.no-notes.yellow-mode .text-no-notes {
+  border-color: var(--yellow);
+  background-color: var(--yellow);
+}
+
+.no-notes.pink-mode .text-no-notes {
+  border-color: var(--pink);
+  background-color: var(--pink);
 }
 
 .no-notes img {
