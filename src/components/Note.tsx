@@ -23,7 +23,7 @@ const Note: React.FC<NoteProps> = (props) => {
         <FiCalendar size={12} />
         <span>{format(props.created_at, "dd/MM/yyyy")}</span>
       </small>
-      <div className="card-text">{props.text}</div>
+      <div className={`card-text ${color}-color`}>{props.text}</div>
     </div>
   );
 }
