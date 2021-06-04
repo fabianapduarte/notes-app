@@ -2,10 +2,10 @@
 <p align="center">Aplicação web de anotações feita com React</p>
 
 <p align="center">
-  <a href="#-sobre">Sobre</a> •
+  <a href="#-sobre-o-projeto">Sobre</a> •
   <a href="#-funcionalidades">Funcionalidades</a> •
   <a href="#-layout">Layout</a> •
-  <a href="#-layout">Como executar</a> •
+  <a href="#-como-executar">Como executar</a> •
   <a href="#-tecnologias">Tecnologias</a>
 </p>
 
